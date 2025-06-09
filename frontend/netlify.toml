@@ -11,6 +11,6 @@
       script-src 'self' https: 'unsafe-inline';
       style-src 'self' 'unsafe-inline' https:;
       img-src 'self' data: https:;
-      connect-src 'self' https:;
+      connect-src 'self' https: wss:;
     """
 
