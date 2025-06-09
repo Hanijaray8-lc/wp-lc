@@ -18,7 +18,7 @@ function App() {
         <Route path="/history" element={<History />} />
         <Route path="/Report" element={<LatestReport />} />
         <Route path="/manual" element={<ManualContact />} />
-        <Route path="/login" element={<LoginForm />} />
+        <Route path="/" element={<LoginForm />} />
       </Routes>
     </Router>
   );
