@@ -84,8 +84,8 @@ const manualNumbers = manualContacts
     if (isScheduled) formData.append('scheduleTime', scheduleTime);
 
     const url = isScheduled
-      ? 'http://localhost:5000/api/whatsapp/schedule'
-      : 'http://localhost:5000/api/whatsapp/send-bulk';
+      ? 'https://wp-lc.onrender.com/api/whatsapp/schedule'
+      : 'https://wp-lc.onrender.com/api/whatsapp/send-bulk';
 
     try {
       const response = await axios.post(url, formData, {
@@ -101,7 +101,7 @@ const manualNumbers = manualContacts
         // Poll for report after scheduled time
         setTimeout(async () => {
           try {
-            const reportRes = await axios.get('http://localhost:5000/api/whatsapp/latest-campaign');
+            const reportRes = await axios.get('https://wp-lc.onrender.com/api/whatsapp/latest-campaign');
             setReport(reportRes.data.report);
           } catch (err) {
             setReport({ total: 0, success: 0, failed: 0, failedNumbers: [], error: 'Failed to fetch report' });

@@ -8,7 +8,7 @@ export default function CampaignReport() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/whatsapp/latest-campaign') // adjust URL as needed
+    fetch('https://wp-lc.onrender.com/api/whatsapp/latest-campaign') // adjust URL as needed
       .then(res => res.json())
       .then(data => {
         setReport(data.report);

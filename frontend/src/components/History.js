@@ -6,7 +6,7 @@ export default function CampaignHistory() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/whatsapp/campaign-history') // adjust if your route base path is different
+    fetch('https://wp-lc.onrender.com/api/whatsapp/campaign-history') // adjust if your route base path is different
       .then(res => res.json())
       .then(data => {
         setCampaigns(data.campaigns);
