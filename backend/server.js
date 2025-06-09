@@ -19,7 +19,13 @@ const io = new Server(httpServer, {
 });
 
 // Middleware
-app.use(cors({ origin: process.env.FRONTEND_URL || 'https://wp-lc.netlify.app' }));
+app.use(cors({
+  origin: ['https://wp-lc.netlify.app'],
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(fileUpload());
 app.use(express.urlencoded({ extended: true }));
