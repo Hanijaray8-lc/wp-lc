@@ -1,0 +1,4 @@
+2025/06/09-10:18:36.612 1e70 Reusing MANIFEST D:\whatsapplc\Bulk Message\backend\.wwebjs_auth\session-bulk-sender\Default\Local Storage\leveldb/MANIFEST-000001
+2025/06/09-10:18:36.613 1e70 Recovering log #19
+2025/06/09-10:18:36.614 1e70 (ignoring error) D:\whatsapplc\Bulk Message\backend\.wwebjs_auth\session-bulk-sender\Default\Local Storage\leveldb/000019.log: dropping 12795 bytes; Corruption: missing start of fragmented record(2)
+2025/06/09-10:18:36.614 1e70 Reusing old log D:\whatsapplc\Bulk Message\backend\.wwebjs_auth\session-bulk-sender\Default\Local Storage\leveldb/000019.log 

@@ -1,0 +1,4 @@
+2025/06/09-10:20:12.269 1868 Creating DB D:\whatsapplc\Bulk Message\backend\.wwebjs_auth\session-bulk-sender\Default\Session Storage since it was missing.
+2025/06/09-10:20:12.374 1868 Reusing MANIFEST D:\whatsapplc\Bulk Message\backend\.wwebjs_auth\session-bulk-sender\Default\Session Storage/MANIFEST-000001
+2025/06/09-10:20:12.374 1868 Recovering log #3
+2025/06/09-10:20:12.375 1868 Reusing old log D:\whatsapplc\Bulk Message\backend\.wwebjs_auth\session-bulk-sender\Default\Session Storage/000003.log 

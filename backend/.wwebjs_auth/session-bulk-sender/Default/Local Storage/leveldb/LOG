@@ -1,0 +1,11 @@
+2025/06/09-10:20:11.565 1868 Creating DB D:\whatsapplc\Bulk Message\backend\.wwebjs_auth\session-bulk-sender\Default\Local Storage\leveldb since it was missing.
+2025/06/09-10:20:11.739 1868 Reusing MANIFEST D:\whatsapplc\Bulk Message\backend\.wwebjs_auth\session-bulk-sender\Default\Local Storage\leveldb/MANIFEST-000001
+2025/06/09-10:20:11.739 1868 Recovering log #19
+2025/06/09-10:20:11.742 1868 (ignoring error) D:\whatsapplc\Bulk Message\backend\.wwebjs_auth\session-bulk-sender\Default\Local Storage\leveldb/000019.log: dropping 12795 bytes; Corruption: missing start of fragmented record(2)
+2025/06/09-10:20:11.743 1868 Reusing old log D:\whatsapplc\Bulk Message\backend\.wwebjs_auth\session-bulk-sender\Default\Local Storage\leveldb/000019.log 
+2025/06/09-10:20:11.744 1868 Delete type=2 #14
+2025/06/09-10:20:11.744 1868 Delete type=2 #17
+2025/06/09-10:20:11.744 1868 Delete type=2 #20
+2025/06/09-10:24:12.278 4744 Level-0 table #21: started
+2025/06/09-10:24:12.502 4744 Level-0 table #21: 19151 bytes OK
+2025/06/09-10:24:12.539 4744 Delete type=0 #19
