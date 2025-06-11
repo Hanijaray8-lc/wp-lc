@@ -12,7 +12,7 @@ function App() {
 
   const fetchGroups = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/groups/my-groups');
+      const res = await axios.get('https://wp-lc.onrender.com/api/groups/my-groups');
       setGroups(res.data.groups || []);
     } catch (err) {
       console.error('Failed to load groups:', err);
@@ -201,7 +201,7 @@ function App() {
                       );
 
                       try {
-                        await axios.post('http://localhost:5000/api/groups/send-to-members', formData, {
+                        await axios.post('https://wp-lc.onrender.com/api/groups/send-to-members', formData, {
                           headers: {
                             'Content-Type': 'multipart/form-data',
                           },

@@ -7,7 +7,7 @@ export default function CampaignHistory() {
 
   useEffect(() => {
     const companyName = localStorage.getItem('companyName');
-    fetch(`http://localhost:5000/api/whatsapp/campaign-history?companyName=${encodeURIComponent(companyName)}`)
+    fetch(`https://wp-lc.onrender.com/api/whatsapp/campaign-history?companyName=${encodeURIComponent(companyName)}`)
       .then(res => res.json())
       .then(data => {
         setCampaigns(data.campaigns);

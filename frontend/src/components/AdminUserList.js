@@ -5,7 +5,7 @@ const AdminUserList = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/users')
+    fetch('https://wp-lc.onrender.com/api/users')
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data)) {

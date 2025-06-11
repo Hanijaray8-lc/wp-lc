@@ -12,14 +12,14 @@ const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+    origin: process.env.FRONTEND_URL || 'https://wp-lc.netlify.app',
     methods: ['GET', 'POST', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
   }
 });
 
 // Middleware
-app.use(cors({ origin: process.env.FRONTEND_URL || 'http://localhost:3000' }));
+app.use(cors({ origin: process.env.FRONTEND_URL || 'https://wp-lc.netlify.app' }));
 app.use(express.json());
 app.use(fileUpload());
 app.use(express.urlencoded({ extended: true }));

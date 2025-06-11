@@ -20,7 +20,7 @@ const WhatsAppAuth = ({ onAuthenticated }) => {
   }, [onAuthenticated]);
 
   useEffect(() => {
-    socketRef.current = io('http://localhost:5000');
+    socketRef.current = io('https://wp-lc.onrender.com');
     const socket = socketRef.current;
 
     // 📤 Received QR code from backend

@@ -30,7 +30,7 @@ const SendBulkForm = () => {
 
     try {
       setIsSending(true);
-      const response = await axios.post('http://localhost:5000/api/whatsapp/send-bulk', formData, {
+      const response = await axios.post('https://wp-lc.onrender.com/api/whatsapp/send-bulk', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setReport(response.data.report);
