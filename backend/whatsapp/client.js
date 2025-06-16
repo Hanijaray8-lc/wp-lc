@@ -2,7 +2,6 @@ const { Client, LocalAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode');
 const fs = require('fs');
 const path = require('path');
-const chromium = require('chromium'); // 🆕 install this via `npm i chromium`
 
 const clients = new Map();
 
@@ -16,6 +15,12 @@ function getAllSessions() {
     sessions.push({ id, client });
   }
   return sessions;
+}
+
+// whatsappClient.js
+function getDefaultSessionId() {
+  const sessions = Object.keys(sessionStore); // your in-memory or DB session store
+  return sessions.length > 0 ? sessions[0] : null;
 }
 
 async function logoutClient(sessionId) {
@@ -42,7 +47,7 @@ async function logoutClient(sessionId) {
     } catch (err) {
       console.warn(`⚠️ Could not delete session folder for ${sessionId}: ${err.message}`);
     }
-  }, 2000);
+  }, 2000); // Give Chromium time to release locked files
 }
 
 function initializeWhatsAppClient(io, sessionId) {
@@ -52,16 +57,7 @@ function initializeWhatsAppClient(io, sessionId) {
     authStrategy: new LocalAuth({ clientId: sessionId }),
     puppeteer: {
       headless: true,
-      executablePath: chromium.path, // ✅ Force using Chromium compatible with serverless
-      args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage',
-        '--disable-accelerated-2d-canvas',
-        '--disable-gpu',
-        '--no-zygote',
-        '--single-process',
-      ],
+      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
     }
   });
 
@@ -98,7 +94,7 @@ function initializeWhatsAppClient(io, sessionId) {
 
     setTimeout(() => {
       initializeWhatsAppClient(io, sessionId);
-    }, 3000);
+    }, 3000); // auto-reinit after disconnect
   });
 
   client.initialize()
@@ -115,5 +111,6 @@ module.exports = {
   initializeWhatsAppClient,
   getClient,
   logoutClient,
-  getAllSessions
+  getAllSessions,
+  getDefaultSessionId
 };
