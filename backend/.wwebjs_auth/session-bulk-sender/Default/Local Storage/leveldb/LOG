@@ -1,9 +1,0 @@
-2025/06/11-10:57:49.521 47b8 Creating DB D:\whatsapplc\wp\backend\.wwebjs_auth\session-bulk-sender\Default\Local Storage\leveldb since it was missing.
-2025/06/11-10:57:49.664 47b8 Reusing MANIFEST D:\whatsapplc\wp\backend\.wwebjs_auth\session-bulk-sender\Default\Local Storage\leveldb/MANIFEST-000001
-2025/06/11-10:57:49.664 47b8 Recovering log #32
-2025/06/11-10:57:49.693 47b8 Reusing old log D:\whatsapplc\wp\backend\.wwebjs_auth\session-bulk-sender\Default\Local Storage\leveldb/000032.log 
-2025/06/11-10:57:49.694 47b8 Delete type=2 #21
-2025/06/11-10:57:49.694 47b8 Delete type=2 #24
-2025/06/11-10:57:49.694 47b8 Delete type=2 #27
-2025/06/11-10:57:49.694 47b8 Delete type=2 #30
-2025/06/11-10:57:49.694 47b8 Delete type=2 #33
