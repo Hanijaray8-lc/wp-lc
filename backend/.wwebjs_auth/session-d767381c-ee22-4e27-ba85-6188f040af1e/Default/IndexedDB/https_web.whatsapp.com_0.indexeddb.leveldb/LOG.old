@@ -1,0 +1,4 @@
+2025/06/16-12:11:55.747 131ec Reusing MANIFEST C:\Users\hambe\OneDrive\Desktop\project\WhatsAppProject\backend\.wwebjs_auth\session-d767381c-ee22-4e27-ba85-6188f040af1e\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/06/16-12:11:55.748 131ec Recovering log #304
+2025/06/16-12:11:55.850 131ec Reusing old log C:\Users\hambe\OneDrive\Desktop\project\WhatsAppProject\backend\.wwebjs_auth\session-d767381c-ee22-4e27-ba85-6188f040af1e\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000304.log 
+2025/06/16-12:11:58.999 14564 Manual compaction at level-0 from '\x00\x1d\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x1e\x00\x00\x00' @ 0 : 0; will stop at (end)

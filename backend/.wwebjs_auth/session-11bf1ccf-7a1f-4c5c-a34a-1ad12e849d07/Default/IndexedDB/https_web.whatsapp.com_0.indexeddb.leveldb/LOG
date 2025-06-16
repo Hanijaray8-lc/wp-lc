@@ -1,0 +1,18 @@
+2025/06/16-14:24:22.321 35c4 Reusing MANIFEST D:\whatsapplc\WhatsAppProject\backend\.wwebjs_auth\session-11bf1ccf-7a1f-4c5c-a34a-1ad12e849d07\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/06/16-14:24:22.322 35c4 Recovering log #255
+2025/06/16-14:24:22.436 35c4 Reusing old log D:\whatsapplc\WhatsAppProject\backend\.wwebjs_auth\session-11bf1ccf-7a1f-4c5c-a34a-1ad12e849d07\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000255.log 
+2025/06/16-14:24:31.112 35c4 Level-0 table #267: started
+2025/06/16-14:24:31.236 35c4 Level-0 table #267: 267528 bytes OK
+2025/06/16-14:24:31.353 35c4 Delete type=0 #255
+2025/06/16-14:24:31.355 35c4 Manual compaction at level-0 from '\x00\x1d\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x1e\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/06/16-14:24:42.823 19f4 Compacting 1@1 + 8@2 files
+2025/06/16-14:24:43.964 19f4 Generated table #268@1: 63958 keys, 2225103 bytes
+2025/06/16-14:24:44.846 19f4 Generated table #269@1: 14441 keys, 2164799 bytes
+2025/06/16-14:24:45.166 19f4 Generated table #270@1: 1344 keys, 2134006 bytes
+2025/06/16-14:24:45.588 19f4 Generated table #271@1: 8779 keys, 2162591 bytes
+2025/06/16-14:24:46.564 19f4 Generated table #272@1: 25746 keys, 2235782 bytes
+2025/06/16-14:24:47.703 19f4 Generated table #273@1: 58310 keys, 2197320 bytes
+2025/06/16-14:24:51.836 19f4 Generated table #274@1: 100877 keys, 2251237 bytes
+2025/06/16-14:24:52.116 19f4 Generated table #275@1: 11614 keys, 286440 bytes
+2025/06/16-14:24:52.116 19f4 Compacted 1@1 + 8@2 files => 15657278 bytes
+2025/06/16-14:24:52.293 19f4 compacted to: files[ 0 0 8 0 0 0 0 ]
