@@ -12,7 +12,7 @@ const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: process.env.FRONTEND_URL || 'https://new-wp.netlify.app',
+    origin: process.env.FRONTEND_URL || 'https://railway.railway.internal',
     methods: ['GET', 'POST', 'OPTIONS'],
    
     allowedHeaders: ['Content-Type', 'Authorization']
@@ -21,12 +21,10 @@ const io = new Server(httpServer, {
 
 app.set('io', io);
 
-// Middleware
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'https://new-wp.netlify.app',
-  
+  origin: 'https:/railway.railway.internal', // your frontend
+  credentials: true,
 }));
-
 
 app.use(express.json());
 app.use(fileUpload());
