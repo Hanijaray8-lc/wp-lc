@@ -26,8 +26,7 @@ app.use(cors({
   origin: process.env.FRONTEND_URL || 'https://wp-lc.netlify.app',
   
 }));
-<<<<<<< HEAD
-=======
+
 // Middleware
 app.use(cors());
 >>>>>>> 0fb31f3 (new)
