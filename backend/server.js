@@ -27,9 +27,7 @@ app.use(cors({
   
 }));
 
-// Middleware
-app.use(cors());
->>>>>>> 0fb31f3 (new)
+
 app.use(express.json());
 app.use(fileUpload());
 app.use(express.urlencoded({ extended: true }));
