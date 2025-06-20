@@ -1,5 +1,0 @@
-2025/06/16-12:13:41.510 2ec4 Creating DB C:\Users\hambe\OneDrive\Desktop\project\WhatsAppProject\backend\.wwebjs_auth\session-b077e2a2-2abd-4625-beb2-42e5b758ecbd\Default\Local Storage\leveldb since it was missing.
-2025/06/16-12:13:41.621 2ec4 Reusing MANIFEST C:\Users\hambe\OneDrive\Desktop\project\WhatsAppProject\backend\.wwebjs_auth\session-b077e2a2-2abd-4625-beb2-42e5b758ecbd\Default\Local Storage\leveldb/MANIFEST-000001
-2025/06/16-12:13:41.622 2ec4 Recovering log #4
-2025/06/16-12:13:41.622 2ec4 Reusing old log C:\Users\hambe\OneDrive\Desktop\project\WhatsAppProject\backend\.wwebjs_auth\session-b077e2a2-2abd-4625-beb2-42e5b758ecbd\Default\Local Storage\leveldb/000004.log 
-2025/06/16-12:13:41.623 2ec4 Delete type=2 #5

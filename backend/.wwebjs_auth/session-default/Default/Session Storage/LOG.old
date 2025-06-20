@@ -1,0 +1,4 @@
+2025/06/12-13:01:48.284 4350 Creating DB D:\project\wp -BulkMessage\wp\backend\.wwebjs_auth\session-default\Default\Session Storage since it was missing.
+2025/06/12-13:01:48.292 4350 Reusing MANIFEST D:\project\wp -BulkMessage\wp\backend\.wwebjs_auth\session-default\Default\Session Storage/MANIFEST-000001
+2025/06/12-13:01:48.293 4350 Recovering log #3
+2025/06/12-13:01:48.293 4350 Reusing old log D:\project\wp -BulkMessage\wp\backend\.wwebjs_auth\session-default\Default\Session Storage/000003.log 

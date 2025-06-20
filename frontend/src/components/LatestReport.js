@@ -27,9 +27,9 @@ export default function CampaignReport() {
   return (
     <div> 
        <Header /> 
-  
+  <div className="min-h-screen bg-green-600 py-5">
     <div className="bg-white p-6 rounded-xl shadow-md max-w-xl mx-auto mt-6">
-      <h2 className="text-xl font-bold text-gray-800 mb-4">📊 Latest Campaign Report</h2>
+      <h2 className="text-xl font-bold text-green-700 mb-4">📊 Latest Campaign Report</h2>
       <ul className="space-y-2">
         <li><strong>Total Contacts:</strong> {report.total}</li>
         <li><strong>Successful:</strong> {report.success}</li>
@@ -44,9 +44,10 @@ export default function CampaignReport() {
               <li key={idx}>{num}</li>
             ))}
           </ul>
-        </div>
+        </div>  
       )}
     </div>
       </div>
+    </div>  
   );
 }

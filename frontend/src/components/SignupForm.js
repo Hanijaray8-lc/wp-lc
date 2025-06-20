@@ -53,7 +53,7 @@ const handleSignup = async (e) => {
     if (response.ok) {
       setError('');
       alert('Signup successful! Redirecting to login page.');
-      navigate('/login');
+      navigate('/');
     } else {
       setError(data.error || 'Signup failed');
       alert(data.error || 'Signup failed');

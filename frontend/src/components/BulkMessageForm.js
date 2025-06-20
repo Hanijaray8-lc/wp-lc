@@ -136,7 +136,7 @@ const BulkMessageForm = () => {
     <div className="max-w-7xl mx-auto p-6 bg-white rounded-lg shadow-md">
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Session ID */}
-        <div>
+        {/* <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Session ID</label>
           <input
             type="text"
@@ -145,7 +145,7 @@ const BulkMessageForm = () => {
             className="w-full border px-3 py-2 rounded"
             required
           />
-        </div>
+        </div> */}
 
         {/* File Upload */}
         <div className="flex flex-col lg:flex-row gap-6">
@@ -155,7 +155,6 @@ const BulkMessageForm = () => {
               Contacts File (CSV/Excel)
             </label>
             <input type="file" accept=".csv,.xlsx,.xls" onChange={handleFileChange} />
-            <p className="text-xs text-gray-500">First column: name, second column: phone number.</p>
           </div>
 
           {contacts.length > 0 && (
@@ -215,7 +214,7 @@ const BulkMessageForm = () => {
           <textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            rows={4}
+            rows={2}
             className="w-full px-3 py-2 border border-gray-300 rounded-md"
             required
           />
@@ -227,7 +226,6 @@ const BulkMessageForm = () => {
             Media / Document (Optional)
           </label>
           <input type="file" onChange={handleMediaChange} />
-          <p className="text-xs text-gray-500">Send image, PDF, or video.</p>
         </div>
 
         {/* Schedule */}

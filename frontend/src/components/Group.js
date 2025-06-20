@@ -11,16 +11,19 @@ function App() {
   const [selectedMembers, setSelectedMembers] = useState([]);
 
   const fetchGroups = async () => {
-    try {const sessionId = localStorage.getItem('sessionId');
-const res = await axios.get(`https://wp-lc.onrender.com/api/groups/my-groups`, {
-  headers: { 'x-session-id': sessionId }
-});
+    try {
+      const sessionId = localStorage.getItem('sessionId');
+      if (!sessionId) throw new Error('Session ID missing');
 
-
+      const res = await axios.get(`https://wp-lc.onrender.com/api/groups/my-groups`, {
+        headers: {
+          'x-session-id': sessionId,
+        },
+      });
       setGroups(res.data.groups || []);
     } catch (err) {
       console.error('Failed to load groups:', err);
-      alert('Error fetching groups. Make sure backend is running.');
+      alert('Error fetching groups. Make sure backend is running and session ID is set.');
     } finally {
       setLoading(false);
     }
@@ -69,6 +72,11 @@ const res = await axios.get(`https://wp-lc.onrender.com/api/groups/my-groups`, {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (selectedMembers.length === 0) {
+      alert('Please select at least one member.');
+      return;
+    }
+
     const formData = new FormData();
     formData.append('message', e.target.message.value);
 
@@ -76,6 +84,9 @@ const res = await axios.get(`https://wp-lc.onrender.com/api/groups/my-groups`, {
     if (fileInput.files.length > 0) {
       formData.append('file', fileInput.files[0]);
     }
+
+    const companyName = localStorage.getItem('companyName') || 'Default Company';
+    formData.append('companyName', companyName);
 
     formData.append(
       'recipients',
@@ -88,6 +99,7 @@ const res = await axios.get(`https://wp-lc.onrender.com/api/groups/my-groups`, {
       });
       alert('Message sent!');
       e.target.reset();
+      clearAllSelectedMembers();
     } catch (err) {
       console.error('Send error:', err);
       alert('Failed to send message.');
@@ -118,7 +130,8 @@ const res = await axios.get(`https://wp-lc.onrender.com/api/groups/my-groups`, {
                     </h2>
                     <button
                       onClick={() => selectGroupMembers(group.members)}
-                      className="flex items-center gap-2 text-green"
+                      className="flex items-center gap-2 text-green-600"
+                      type="button"
                     >
                       <span className="text-sm">Select All</span>
                       {isAllGroupSelected(group.members) ? (
@@ -148,7 +161,11 @@ const res = await axios.get(`https://wp-lc.onrender.com/api/groups/my-groups`, {
                                 <FaUserShield /> Admin
                               </span>
                             )}
-                            <button onClick={() => toggleSelectMember(member)} title="Select/Unselect">
+                            <button
+                              onClick={() => toggleSelectMember(member)}
+                              title="Select/Unselect"
+                              type="button"
+                            >
                               <IoCheckmarkCircleSharp
                                 className={`text-2xl ${
                                   isMemberSelected(member)
@@ -174,6 +191,7 @@ const res = await axios.get(`https://wp-lc.onrender.com/api/groups/my-groups`, {
                     <button
                       onClick={clearAllSelectedMembers}
                       className="text-sm text-red-600 border border-red-600 px-2 py-1 rounded hover:bg-red-100"
+                      type="button"
                     >
                       Clear All
                     </button>
@@ -194,7 +212,11 @@ const res = await axios.get(`https://wp-lc.onrender.com/api/groups/my-groups`, {
                               <FaUserShield /> Admin
                             </span>
                           )}
-                          <button onClick={() => removeMember(member.number)} title="Remove">
+                          <button
+                            onClick={() => removeMember(member.number)}
+                            title="Remove"
+                            type="button"
+                          >
                             <IoCloseCircle className="text-2xl text-red-500 hover:text-red-700" />
                           </button>
                         </div>
@@ -211,9 +233,9 @@ const res = await axios.get(`https://wp-lc.onrender.com/api/groups/my-groups`, {
                       rows="10"
                       placeholder="Type your message"
                       className="w-full p-2 border border-gray-300 rounded mb-3"
-                      required
                     ></textarea>
 
+                    <h3 className="text-ld font-semibold mb-2 text-[#075E54]">Optional Media File</h3>
                     <input
                       type="file"
                       name="file"

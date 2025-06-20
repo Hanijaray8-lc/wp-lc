@@ -26,8 +26,9 @@ export default function CampaignHistory() {
   return (
     <div>
            <Header />
-    <div className="max-w-4xl mx-auto mt-6 p-4 bg-white rounded-xl  shadow">
-      <h2 className="text-2xl font-bold mb-4 text-gray-800">📜 Campaign History</h2>
+           <div className="min-h-screen bg-green-600 py-5 ">
+    <div className="max-w-4xl mx-auto mt-4 p-4 bg-white rounded-xl  shadow">
+      <h2 className="text-2xl font-bold mb-4 text-green-700">📜 Campaign History</h2>
 
       {campaigns.length === 0 ? (
         <p>No campaign history found.</p>
@@ -61,6 +62,7 @@ export default function CampaignHistory() {
           ))}
         </div>
       )}
+    </div>
     </div>
     </div>
   );

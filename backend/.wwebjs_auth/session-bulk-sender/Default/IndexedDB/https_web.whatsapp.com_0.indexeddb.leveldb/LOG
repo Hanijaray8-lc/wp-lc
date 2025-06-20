@@ -1,37 +1,15 @@
-2025/06/11-13:22:17.998 969c Reusing MANIFEST C:\Users\hambe\OneDrive\Desktop\project\Bulk Message\backend\.wwebjs_auth\session-bulk-sender\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/06/11-13:22:17.998 969c Recovering log #923
-2025/06/11-13:22:18.026 969c Reusing old log C:\Users\hambe\OneDrive\Desktop\project\Bulk Message\backend\.wwebjs_auth\session-bulk-sender\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000923.log 
-2025/06/11-13:22:18.827 d8a0 Level-0 table #938: started
-2025/06/11-13:22:18.834 d8a0 Level-0 table #938: 226413 bytes OK
-2025/06/11-13:22:18.834 d8a0 Delete type=0 #923
-2025/06/11-13:22:18.835 d8a0 Manual compaction at level-0 from '\x00\x8e\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x8f\x00\x00\x00' @ 0 : 0; will stop at '\x00\x8e\x00\x00\x05' @ 2996163 : 1
-2025/06/11-13:22:18.835 d8a0 Compacting 1@0 + 0@1 files
-2025/06/11-13:22:18.843 d8a0 Generated table #939@0: 5956 keys, 112024 bytes
-2025/06/11-13:22:18.843 d8a0 Compacted 1@0 + 0@1 files => 112024 bytes
-2025/06/11-13:22:18.844 d8a0 compacted to: files[ 0 1 10 0 0 0 0 ]
-2025/06/11-13:22:18.844 d8a0 Delete type=2 #938
-2025/06/11-13:22:18.845 d8a0 Manual compaction at level-0 from '\x00\x8e\x00\x00\x05' @ 2996163 : 1 .. '\x00\x8f\x00\x00\x00' @ 0 : 0; will stop at (end)
-2025/06/11-13:22:20.324 dbfc Compacting 1@1 + 10@2 files
-2025/06/11-13:22:20.381 dbfc Generated table #940@1: 49966 keys, 2209603 bytes
-2025/06/11-13:22:20.418 dbfc Generated table #941@1: 2658 keys, 2152319 bytes
-2025/06/11-13:22:20.444 dbfc Generated table #942@1: 3160 keys, 2160130 bytes
-2025/06/11-13:22:20.480 dbfc Generated table #943@1: 2784 keys, 2154724 bytes
-2025/06/11-13:22:20.539 dbfc Generated table #944@1: 27816 keys, 2238292 bytes
-2025/06/11-13:22:20.613 dbfc Generated table #945@1: 23726 keys, 2213918 bytes
-2025/06/11-13:22:20.657 dbfc Generated table #946@1: 15343 keys, 2136502 bytes
-2025/06/11-13:22:20.744 dbfc Generated table #947@1: 101579 keys, 2253463 bytes
-2025/06/11-13:22:20.824 dbfc Generated table #948@1: 98642 keys, 2248372 bytes
-2025/06/11-13:22:20.890 dbfc Generated table #949@1: 89171 keys, 2032273 bytes
-2025/06/11-13:22:20.890 dbfc Compacted 1@1 + 10@2 files => 21799596 bytes
-2025/06/11-13:22:20.891 dbfc compacted to: files[ 0 0 10 0 0 0 0 ]
-2025/06/11-13:22:20.891 dbfc Delete type=2 #926
-2025/06/11-13:22:20.891 dbfc Delete type=2 #927
-2025/06/11-13:22:20.891 dbfc Delete type=2 #928
-2025/06/11-13:22:20.891 dbfc Delete type=2 #929
-2025/06/11-13:22:20.891 dbfc Delete type=2 #930
-2025/06/11-13:22:20.891 dbfc Delete type=2 #931
-2025/06/11-13:22:20.891 dbfc Delete type=2 #932
-2025/06/11-13:22:20.891 dbfc Delete type=2 #933
-2025/06/11-13:22:20.891 dbfc Delete type=2 #934
-2025/06/11-13:22:20.891 dbfc Delete type=2 #935
-2025/06/11-13:22:20.891 dbfc Delete type=2 #939
+2025/06/12-10:00:28.810 46fc Reusing MANIFEST D:\project\wp -BulkMessage\wp\backend\.wwebjs_auth\session-bulk-sender\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/06/12-10:00:28.811 46fc Recovering log #3681
+2025/06/12-10:00:28.890 46fc Reusing old log D:\project\wp -BulkMessage\wp\backend\.wwebjs_auth\session-bulk-sender\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/003681.log 
+2025/06/12-10:00:31.427 46fc Level-0 table #3687: started
+2025/06/12-10:00:31.447 46fc Level-0 table #3687: 321783 bytes OK
+2025/06/12-10:00:31.449 46fc Delete type=0 #3681
+2025/06/12-10:00:31.451 46fc Manual compaction at level-0 from '\x00\x9b\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x9c\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/06/12-10:00:35.307 4e5c Compacting 1@1 + 2@2 files
+2025/06/12-10:00:35.459 4e5c Generated table #3688@1: 40052 keys, 2192199 bytes
+2025/06/12-10:00:35.562 4e5c Generated table #3689@1: 44945 keys, 1532889 bytes
+2025/06/12-10:00:35.562 4e5c Compacted 1@1 + 2@2 files => 3725088 bytes
+2025/06/12-10:00:35.563 4e5c compacted to: files[ 0 0 2 0 0 0 0 ]
+2025/06/12-10:00:35.563 4e5c Delete type=2 #3683
+2025/06/12-10:00:35.564 4e5c Delete type=2 #3684
+2025/06/12-10:00:35.564 4e5c Delete type=2 #3687

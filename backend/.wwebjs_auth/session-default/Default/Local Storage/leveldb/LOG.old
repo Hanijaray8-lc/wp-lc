@@ -1,0 +1,4 @@
+2025/06/12-13:01:46.291 4350 Creating DB D:\project\wp -BulkMessage\wp\backend\.wwebjs_auth\session-default\Default\Local Storage\leveldb since it was missing.
+2025/06/12-13:01:46.302 4350 Reusing MANIFEST D:\project\wp -BulkMessage\wp\backend\.wwebjs_auth\session-default\Default\Local Storage\leveldb/MANIFEST-000001
+2025/06/12-13:01:46.303 4350 Recovering log #3
+2025/06/12-13:01:46.304 4350 Reusing old log D:\project\wp -BulkMessage\wp\backend\.wwebjs_auth\session-default\Default\Local Storage\leveldb/000003.log 

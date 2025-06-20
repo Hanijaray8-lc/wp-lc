@@ -26,6 +26,11 @@ app.use(cors({
   origin: process.env.FRONTEND_URL || 'https://wp-lc.netlify.app',
   
 }));
+<<<<<<< HEAD
+=======
+// Middleware
+app.use(cors());
+>>>>>>> 0fb31f3 (new)
 app.use(express.json());
 app.use(fileUpload());
 app.use(express.urlencoded({ extended: true }));
@@ -45,7 +50,7 @@ io.on('connection', (socket) => {
 });
 
 // Routes
-const whatsappRoutes = require('./routes/whatsapp');
+const whatsappRoutes = require('./routes/whatsappRoutes');
 app.use('/api/whatsapp', whatsappRoutes({
   getClient,
   io
@@ -63,6 +68,12 @@ app.use('/api/contacts', contactsRoutes(getClient));
 
 const groupRoutes = require('./routes/groupRoutes');
 app.use('/api/groups', groupRoutes(getClient, getAllSessions));
+
+const extractRoute = require('./routes/extractorRoutes'); 
+app.use('/api/extract', extractRoute);
+
+const autoResponderRoutes = require('./routes/autoResponderRoutes');
+app.use('/api/autoresponder', autoResponderRoutes);
 
 
 // Start server

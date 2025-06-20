@@ -116,12 +116,12 @@ const WhatsAppAuth = ({ onAuthenticated }) => {
         <div className="text-center p-4 bg-green-100 rounded-lg">
           <p className="text-green-800 font-medium">WhatsApp authenticated successfully!</p>
           <img src={tick} alt="Success" className="mx-auto mt-4" width={200} height={200} />
-          <button
+          {/* <button
             onClick={handleLogout}
             className="mt-6 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
           >
             Logout
-          </button>
+          </button> */}
         </div>
       )}
     </div>

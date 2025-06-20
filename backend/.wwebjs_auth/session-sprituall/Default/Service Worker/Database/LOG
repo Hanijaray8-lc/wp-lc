@@ -1,3 +1,2 @@
-2025/06/16-14:24:19.842 44dc Reusing MANIFEST D:\whatsapplc\WhatsAppProject\backend\.wwebjs_auth\session-sprituall\Default\Service Worker\Database/MANIFEST-000001
-2025/06/16-14:24:19.843 44dc Recovering log #3
-2025/06/16-14:24:19.843 44dc Reusing old log D:\whatsapplc\WhatsAppProject\backend\.wwebjs_auth\session-sprituall\Default\Service Worker\Database/000003.log 
+2025/06/19-16:07:51.520 2cf8 Creating DB D:\whatsapplc\WhatsAppProject\backend\.wwebjs_auth\session-sprituall\Default\Service Worker\Database since it was missing.
+2025/06/19-16:07:51.649 2cf8 Reusing MANIFEST D:\whatsapplc\WhatsAppProject\backend\.wwebjs_auth\session-sprituall\Default\Service Worker\Database/MANIFEST-000001

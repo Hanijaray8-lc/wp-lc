@@ -15,7 +15,9 @@ const AdminUserList = () => {
     xl: false,
     dashboard: false,
     group: false,
-    contact: false // <-- Add this line
+    contact: false ,// <-- Add this line
+   auto: false,
+    extractor: false
   });
   const navigate = useNavigate();
 
@@ -69,7 +71,9 @@ const AdminUserList = () => {
       xl: false,
       dashboard: false,
       group: false,
-      contact: false // <-- Add this line
+      contact: false, // <-- Add this line
+      auto: false,
+      extractor: false
     });
     setShowAccessModal(true);
   };
@@ -196,7 +200,7 @@ const AdminUserList = () => {
                     className="mr-2"
                   />
                   <label htmlFor={key} className="capitalize">
-                    {key === 'xl' ? 'Excel Editor' : key === 'report' ? 'Reports' : key === 'contact' ? 'Contact' : key}
+                    {key === 'xl' ? 'Excel Editor' : key === 'report' ? 'Reports' : key === 'contact' ? 'Contact' : key === 'auto' ? 'Auto Responder' : key === 'extractor' ? 'Extractor' : key}
                   </label>
                 </div>
               ))}

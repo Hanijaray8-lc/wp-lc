@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import WhatsAppAuth from './WhatsAppAuth';
 import BulkMessageForm from './BulkMessageForm';
-import Header from './Header';
 import { ToastContainer } from 'react-toastify';
+import Navbar from './Navbar';
 
 function HomePage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Header */}
-      <Header />
+      <Navbar />
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-6">

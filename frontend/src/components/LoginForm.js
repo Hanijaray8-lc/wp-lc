@@ -93,12 +93,6 @@ const LoginForm = () => {
           Login
         </button>
       </form>
-        <a href="/signup" className="hover:underline">
-            Sign Up
-          </a> <br />
-          <a href="/admin" className="hover:underline">
-            #
-          </a>
     </div>
   );
 };

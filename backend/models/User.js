@@ -14,7 +14,9 @@ const userSchema = new mongoose.Schema({
     xl: { type: Boolean, default: false },
     dashboard: { type: Boolean, default: false },
     group: { type: Boolean, default: false },
-     contact: { type: Boolean, default: false }
+     contact: { type: Boolean, default: false },
+     auto: { type: Boolean, default: false },
+    extractor: { type: Boolean, default: false }
   }
 });
 

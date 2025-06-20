@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import * as XLSX from 'xlsx';
 import logo from '../assets/icon.jpg'; // Adjust logo path
+import Header from './Header';
 
 const XlsxContactEditor = () => {
   // Your existing states and handlers here...
@@ -51,37 +52,39 @@ const XlsxContactEditor = () => {
   // ... other handlers (handleEdit, handleSave, handleDelete, handleAdd, handleExport) unchanged
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div>
+      <Header />
+    <div className="min-h-screen bg-green-600">
       {/* Header */}
-            <header className="bg-green-700 text-white shadow-md">
-        <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-6 py-4 space-y-4 lg:space-y-0">
+            {/* <header className="bg-green-700 text-white shadow-md">
+        <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-6 py-4 space-y-4 lg:space-y-0"> */}
           
           {/* Logo + Title */}
-          <div className="flex items-center gap-4">
+          {/* <div className="flex items-center gap-4">
             {/* Logo (Replace src with your image path) */}
-        <img
+        {/* <img
         src={logo}
         alt="Logo"
         className="h-12 w-12 z-20 rounded-full object-cover bg-green-700 p-1 drop-shadow-[0_0_8px_white]"
       />
+        */}
       
-      
-            <div>
+            {/* <div>
               <h1 className="text-2xl lg:text-3xl text-white font-bold tracking-tight">
                 WhatsApp Bulk Sender
               </h1>
               <p className="text-sm text-green-100">Send messages to multiple contacts efficiently</p>
             </div>
           </div>
-      
+       */}
           {/* Optional nav or button (extendable) */}
           {/* <nav className="text-sm space-x-4">
             <a href="#" className="hover:underline">Home</a>
             <a href="#" className="hover:underline">Campaigns</a>
           </nav> */}
       
-        </div>
-      </header>
+        {/* </div>
+      </header> */}
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
@@ -253,6 +256,7 @@ const XlsxContactEditor = () => {
         </div>
       </main>
     </div>
+        </div>
   );
 };
 

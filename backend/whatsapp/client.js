@@ -2,6 +2,7 @@ const { Client, LocalAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode');
 const fs = require('fs');
 const path = require('path');
+const ResponseRule = require('../models/ResponseRule'); // Add this at the top
 
 const clients = new Map();
 
@@ -74,6 +75,22 @@ function initializeWhatsAppClient(io, sessionId) {
     io.to(sessionId).emit('ready');
     console.log(`✅ WhatsApp client ready for: ${sessionId}`);
   });
+
+  // --- Add this block for auto-responder ---
+  client.on('message', async (msg) => {
+    try {
+      const rules = await ResponseRule.find({ sessionId }); // <-- Only fetch rules for this session
+      for (const rule of rules) {
+        if (msg.body.toLowerCase().includes(rule.keyword.toLowerCase())) {
+          await msg.reply(rule.response);
+          break;
+        }
+      }
+    } catch (err) {
+      console.error('Auto-responder error:', err.message);
+    }
+  });
+  // --- End auto-responder block ---
 
   client.on('disconnected', async (reason) => {
     console.log(`❌ Disconnected [${sessionId}]: ${reason}`);

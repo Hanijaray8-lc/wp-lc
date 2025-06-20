@@ -8,12 +8,18 @@ import ManualContact from './components/ManualContact';
 import LoginForm from './components/LoginForm';
 import QR from './components/QR';
 import SignupForm from './components/SignupForm';
-import Navbar from './components/Navbar';
+import Services from './components/Services';
 import XlsxContactEditor from './components/XlsxContactEditor';
 import AdminUserList from './components/AdminUserList';
 import ToolDashboard from './components/ToolDashboard';
 import Group from './components/Group';
 import Contact from './components/Contact';
+import Navbar from './components/Navbar';
+import Extractor from './components/Extractor';
+import AutoResponderRule from './components/AutoResponderRules';
+import Message from './components/Message'; 
+import HomePage from './components/HomePage';
+import MessageProgress from './components/MessageProgress';
 
 function App() {
   return (
@@ -25,14 +31,19 @@ function App() {
           <Route path="/Report" element={<ProtectedRoute permission="report"><LatestReport /></ProtectedRoute>} />
           <Route path="/manual" element={<ProtectedRoute permission="manual"><ManualContact /></ProtectedRoute>} />
           <Route path="/" element={<LoginForm />} />
-            <Route path="/login" element={<LoginForm />} />
           <Route path="/signup" element={<SignupForm />} />
-          <Route path="/nav" element={<Navbar />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/xl" element={<ProtectedRoute permission="xl"><XlsxContactEditor /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminUserList/>} />
           <Route path="/dashboard" element={<ProtectedRoute permission="dashboard"><ToolDashboard/></ProtectedRoute>} />
           <Route path="/group" element={<ProtectedRoute permission="group"><Group /></ProtectedRoute>} />
-          <Route path="/contacts" element={<ProtectedRoute permission="contact"><Contact/></ProtectedRoute>} />
+          <Route path="/contacts" element={<ProtectedRoute permission="contact"><Contact /></ProtectedRoute>} />
+          <Route path="/nav" element={<Navbar />} />
+          <Route path="/auto" element={<ProtectedRoute permission="auto"><AutoResponderRule/></ProtectedRoute>} />
+          <Route path='/extractor' element={<ProtectedRoute permission="extractor"><Extractor /></ProtectedRoute>} />
+          <Route path="/messageform" element={<Message />} />
+          <Route path="/messageprogress" element={<MessageProgress />} />
+          <Route path="/home" element={<HomePage />} />
         </Routes>
       </Router>
       <ToastContainer />
@@ -56,7 +67,7 @@ function ProtectedRoute({ children, permission }) {
           return;
         }
 
-        const response = await fetch(`http://localhost:5000/api/users/${username}/permissions`);
+        const response = await fetch(`https://wp-lc.onrender.com/api/users/${username}/permissions`);
         const data = await response.json();
         
         if (response.ok && data.accessPermissions && data.accessPermissions[permission]) {

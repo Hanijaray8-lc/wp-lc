@@ -1,5 +1,6 @@
 import React from "react";
-import logo from "../assets/icon.jpg"; // Update with your logo path
+import logo from "../assets/icon.jpg"; 
+import { ArrowLeft } from "lucide-react";
 
 const Header = () => {
   return (
@@ -24,7 +25,7 @@ const Header = () => {
         </div>
 
         {/* Navigation Links */}
-        <nav className="text-sm space-x-4">
+        {/* <nav className="text-sm space-x-4">
           <a href="/homepage" className="hover:underline">
             Home
           </a>
@@ -43,7 +44,21 @@ const Header = () => {
           <a href="/report" className="hover:underline">
             Report
           </a>
-        </nav>
+        </nav> */}
+
+
+        <a
+      href="#"
+      onClick={(e) => {
+        e.preventDefault();
+        window.history.back();
+      }}
+      className="inline-flex items-center gap-2 px-4 py-2 bg-white hover:bg-gray-200 text-green-700 rounded-lg shadow transition"
+    >
+      <ArrowLeft className="w-4 h-4" />
+      <span>Back</span>
+    </a>
+
       </div>
     </header>
   );

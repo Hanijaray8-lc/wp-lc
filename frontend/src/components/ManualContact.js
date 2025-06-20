@@ -58,7 +58,7 @@ const SendBulkForm = () => {
           <h2 className="text-3xl font-bold text-center text-green-700 mb-6">Send Bulk Messages</h2>
 
           <form onSubmit={handleSubmit} className="space-y-5">
-            <div>
+            {/* <div>
               <label className="block text-sm font-medium text-green-800">Session ID</label>
               <input
                 type="text"
@@ -68,7 +68,7 @@ const SendBulkForm = () => {
                 required
                 className="w-full border border-green-300 rounded-md p-2 mt-1 text-sm"
               />
-            </div>
+            </div> */}
 
             <div>
               <label className="block text-sm font-medium text-green-800">Phone Numbers</label>
