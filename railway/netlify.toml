@@ -11,7 +11,7 @@
       script-src 'self' 'unsafe-inline' https:;
       style-src 'self' 'unsafe-inline' https:;
       img-src 'self' data: https:;
-      connect-src 'self' https: wss: https://wp-lc.onrender.com wss://wp-lc.onrender.com;
+      connect-src 'self' https: wss: https://69c2qp9e.up.railway.app wss://69c2qp9e.up.railway.app;
     """
     Access-Control-Allow-Origin = "*"
     Access-Control-Allow-Headers = "Content-Type, Authorization"
