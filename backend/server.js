@@ -12,7 +12,7 @@ const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: process.env.FRONTEND_URL || 'https://wp-lc.netlify.app',
+    origin: process.env.FRONTEND_URL || 'https://new-wp.netlify.app',
     methods: ['GET', 'POST', 'OPTIONS'],
    
     allowedHeaders: ['Content-Type', 'Authorization']
@@ -23,7 +23,7 @@ app.set('io', io);
 
 // Middleware
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'https://wp-lc.netlify.app',
+  origin: process.env.FRONTEND_URL || 'https://new-wp.netlify.app',
   
 }));
 
