@@ -13,8 +13,6 @@ const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
 
-    origin: process.env.FRONTEND_URL || 'https://railway.railway.internal',
-
     origin: process.env.FRONTEND_URL || 'https://wp-lc.netlify.app',
 
     methods: ['GET', 'POST', 'OPTIONS'],
