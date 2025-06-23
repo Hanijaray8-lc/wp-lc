@@ -12,7 +12,11 @@ const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
+
     origin: process.env.FRONTEND_URL || 'https://railway.railway.internal',
+
+    origin: process.env.FRONTEND_URL || 'https://wp-lc.netlify.app',
+
     methods: ['GET', 'POST', 'OPTIONS'],
    
     allowedHeaders: ['Content-Type', 'Authorization']
@@ -22,7 +26,7 @@ const io = new Server(httpServer, {
 app.set('io', io);
 
 app.use(cors({
-  origin: 'https:/railway.railway.internal', // your frontend
+  origin: 'https://wp-lc.netlify.app', // your frontend
   credentials: true,
 }));
 
@@ -45,7 +49,11 @@ io.on('connection', (socket) => {
 });
 
 // Routes
+
 const whatsappRoutes = require('./routes/whatsappRoutes');
+
+const whatsappRoutes = require('./routes/whatsapp');
+
 app.use('/api/whatsapp', whatsappRoutes({
   getClient,
   io
@@ -64,11 +72,27 @@ app.use('/api/contacts', contactsRoutes(getClient));
 const groupRoutes = require('./routes/groupRoutes');
 app.use('/api/groups', groupRoutes(getClient, getAllSessions));
 
+
 const extractRoute = require('./routes/extractorRoutes'); 
 app.use('/api/extract', extractRoute);
 
 const autoResponderRoutes = require('./routes/autoResponderRoutes');
 app.use('/api/autoresponder', autoResponderRoutes);
+
+
+const autoResponderRoutes = require('./routes/autoResponderRoutes');
+app.use('/api/autoresponder', autoResponderRoutes);
+
+const extractRoute = require('./routes/extractorRoutes'); 
+app.use('/api/extract', extractRoute);
+const socialMediadataExtractorRoutes = require('./routes/extractor');
+app.use('/api/extractor', socialMediadataExtractorRoutes);
+const socialMediaRoutes = require('./routes/SocialMediaRoutes');
+app.use('/api', socialMediaRoutes);
+const mapScraper = require('./routes/googlemapRoutes');
+app.use('/api', mapScraper);
+
+
 
 
 // Start server

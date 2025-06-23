@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 2025/06/19-14:24:13.878 5338 Reusing MANIFEST D:\project\wp (admin access)\backend\.wwebjs_auth\session-LifeChangers\Default\Service Worker\Database/MANIFEST-000001
 2025/06/19-14:24:13.879 5338 Recovering log #3
 2025/06/19-14:24:13.885 5338 Reusing old log D:\project\wp (admin access)\backend\.wwebjs_auth\session-LifeChangers\Default\Service Worker\Database/000003.log 
+=======
+2025/06/21-16:31:53.241 3678 Reusing MANIFEST C:\Users\hambe\OneDrive\Desktop\project\Bulk Message\backend\.wwebjs_auth\session-Lifechangers\Default\Service Worker\Database/MANIFEST-000001
+2025/06/21-16:31:53.241 3678 Recovering log #3
+2025/06/21-16:31:53.242 3678 Reusing old log C:\Users\hambe\OneDrive\Desktop\project\Bulk Message\backend\.wwebjs_auth\session-Lifechangers\Default\Service Worker\Database/000003.log 
+>>>>>>> 1074a2a (secc)

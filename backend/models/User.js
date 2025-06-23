@@ -16,7 +16,13 @@ const userSchema = new mongoose.Schema({
     group: { type: Boolean, default: false },
      contact: { type: Boolean, default: false },
      auto: { type: Boolean, default: false },
+<<<<<<< HEAD
     extractor: { type: Boolean, default: false }
+=======
+    extractor: { type: Boolean, default: false },
+    link: { type: Boolean, default: false },
+    google: { type: Boolean, default: false }
+>>>>>>> 1074a2a (secc)
   }
 });
 

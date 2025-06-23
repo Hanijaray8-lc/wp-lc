@@ -8,8 +8,13 @@ import {
   FaRobot,
   FaHistory,
   FaChartLine,
+ 
   FaCogs,
   FaLifeRing,
+
+  FaMapMarkedAlt,
+  FaShareAlt,
+ 
 } from "react-icons/fa";
 import Home from "./Navbar";
 
@@ -58,6 +63,22 @@ const Dashboard = () => {
     path: "/auto",
   },
   {
+
+    title: "Google Maps Scraper",
+    description: "Extract business data and location details from Google Maps.",
+    icon: <FaMapMarkedAlt size={40} />,  
+    action: "Start Scraping",
+    path: "/google",
+  },
+  {
+    title: "Social Media Extractor",
+    description: "Scrape profiles, posts, and other public data from social platforms.",
+    icon: <FaShareAlt size={40} />,  
+    action: "Start Extraction",
+    path: "/link",
+  },
+  {
+
     title: "History",
     description: "View past messages and activity logs.",
     icon: <FaHistory size={40} />,
@@ -71,6 +92,7 @@ const Dashboard = () => {
     action: "View Reports",
     path: "/Report",
   },
+
   {
     title: "Settings",
     description: "Manage system preferences and configurations.",
@@ -85,6 +107,7 @@ const Dashboard = () => {
     action: "Get Support",
     path: "/help-support",
   },
+
 ];
 
   return (

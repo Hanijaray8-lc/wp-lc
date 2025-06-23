@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 2025/06/12-13:01:48.284 4350 Creating DB D:\project\wp -BulkMessage\wp\backend\.wwebjs_auth\session-default\Default\Session Storage since it was missing.
 2025/06/12-13:01:48.292 4350 Reusing MANIFEST D:\project\wp -BulkMessage\wp\backend\.wwebjs_auth\session-default\Default\Session Storage/MANIFEST-000001
 2025/06/12-13:01:48.293 4350 Recovering log #3
 2025/06/12-13:01:48.293 4350 Reusing old log D:\project\wp -BulkMessage\wp\backend\.wwebjs_auth\session-default\Default\Session Storage/000003.log 
+=======
+2025/06/17-11:06:09.155 1270 Reusing MANIFEST C:\Users\hambe\OneDrive\Desktop\project\WhatsAppProject\backend\.wwebjs_auth\session-default\Default\Session Storage/MANIFEST-000001
+2025/06/17-11:06:09.156 1270 Recovering log #3
+2025/06/17-11:06:09.156 1270 Reusing old log C:\Users\hambe\OneDrive\Desktop\project\WhatsAppProject\backend\.wwebjs_auth\session-default\Default\Session Storage/000003.log 
+>>>>>>> 1074a2a (secc)

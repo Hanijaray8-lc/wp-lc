@@ -40,4 +40,8 @@ exports.deleteRule = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Error deleting rule' });
   }
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> 1074a2a (secc)

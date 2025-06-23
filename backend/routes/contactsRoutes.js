@@ -224,5 +224,77 @@ router.post('/message', async (req, res) => {
 });
 
 
+<<<<<<< HEAD
   return router;
 };
+=======
+
+router.post('/google-message', async (req, res) => {
+  const session = getClientFromSession(req, res);
+  if (!session) return;
+
+  const { client } = session;
+  const { ids, message, companyName } = req.body;
+
+  if (!ids?.length || !message?.trim()) {
+    return res.status(400).json({ error: 'Missing ids or message' });
+  }
+
+  let failedNumbers = [];
+  let sentCount = 0;
+
+  const normalized = ids.map(num => {
+    let digits = num.replace(/\D/g, '').replace(/^0+/, ''); // Remove non-digits and leading zeros
+    if (!digits.startsWith('91')) digits = '91' + digits; // Assuming default country code
+    return {
+      raw: num,
+      waId: `${digits}@c.us`,
+    };
+  });
+
+  try {
+    for (const { raw, waId } of normalized) {
+      try {
+        const isValid = await client.isRegisteredUser(waId);
+        if (!isValid) {
+          console.warn(`🚫 Skipped: ${waId} is not a registered WhatsApp user`);
+          failedNumbers.push(raw);
+          continue;
+        }
+
+        await client.sendMessage(waId, message);
+        sentCount++;
+      } catch (err) {
+        console.error(`❌ Failed to send to ${waId}:`, err.message);
+        failedNumbers.push(raw);
+      }
+    }
+
+    await Campaign.create({
+      totalContacts: ids.length,
+      successful: sentCount,
+      failed: failedNumbers.length,
+      failedNumbers,
+      message,
+      companyName,
+      timestamp: new Date(),
+    });
+
+    const results = ids.map(num => ({
+      number: num,
+      status: failedNumbers.includes(num) ? 'failed' : 'sent',
+    }));
+
+    res.json({ success: true, results });
+  } catch (err) {
+    console.error('❌ Error sending message:', err.message);
+    res.status(500).json({ error: 'Failed to send message' });
+  }
+});
+
+
+
+
+  return router;
+};
+>>>>>>> 1074a2a (secc)

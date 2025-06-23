@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 2025/06/19-16:02:19.666 2fa4 Creating DB D:\whatsapplc\WhatsAppProject\backend\.wwebjs_auth\session-spri\Default\Session Storage since it was missing.
 2025/06/19-16:02:19.786 2fa4 Reusing MANIFEST D:\whatsapplc\WhatsAppProject\backend\.wwebjs_auth\session-spri\Default\Session Storage/MANIFEST-000001
+=======
+2025/06/23-12:52:49.651 47ec Creating DB D:\whatsapplc\Bulk Message\backend\.wwebjs_auth\session-spri\Default\Session Storage since it was missing.
+2025/06/23-12:52:50.049 47ec Reusing MANIFEST D:\whatsapplc\Bulk Message\backend\.wwebjs_auth\session-spri\Default\Session Storage/MANIFEST-000001
+>>>>>>> 1074a2a (secc)

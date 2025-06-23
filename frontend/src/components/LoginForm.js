@@ -31,7 +31,11 @@ const LoginForm = () => {
       localStorage.setItem('username', data.username);
       localStorage.setItem('sessionId', data.sessionId); // <-- Add this line
       alert('Login successful! Redirecting to homepage.');
+<<<<<<< HEAD
       navigate('/Homepage');
+=======
+      navigate('/main');
+>>>>>>> 1074a2a (secc)
     } else {
       setError(data.error || 'Login failed');
     }

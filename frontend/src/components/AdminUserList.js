@@ -17,7 +17,13 @@ const AdminUserList = () => {
     group: false,
     contact: false ,// <-- Add this line
    auto: false,
+<<<<<<< HEAD
     extractor: false
+=======
+    extractor: false,
+    link: false,
+    google: false
+>>>>>>> 1074a2a (secc)
   });
   const navigate = useNavigate();
 
@@ -73,7 +79,13 @@ const AdminUserList = () => {
       group: false,
       contact: false, // <-- Add this line
       auto: false,
+<<<<<<< HEAD
       extractor: false
+=======
+      extractor: false,
+      link: false,
+      google: false
+>>>>>>> 1074a2a (secc)
     });
     setShowAccessModal(true);
   };
@@ -200,7 +212,11 @@ const AdminUserList = () => {
                     className="mr-2"
                   />
                   <label htmlFor={key} className="capitalize">
+<<<<<<< HEAD
                     {key === 'xl' ? 'Excel Editor' : key === 'report' ? 'Reports' : key === 'contact' ? 'Contact' : key === 'auto' ? 'Auto Responder' : key === 'extractor' ? 'Extractor' : key}
+=======
+                    {key === 'xl' ? 'Excel Editor' : key === 'report' ? 'Reports' : key === 'contact' ? 'Contact' : key === 'auto' ? 'Auto Responder' : key === 'extractor' ? 'Extractor' : key === 'link' ? 'Link Manager' : key === 'google' ? 'Google Search' : key  }
+>>>>>>> 1074a2a (secc)
                   </label>
                 </div>
               ))}

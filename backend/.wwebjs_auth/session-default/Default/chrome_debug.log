@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [0612/150703.275:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Feature xr-spatial-tracking's parameters are ignored.", source:  (0)
 [0612/150703.275:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'attribution-reporting'.", source:  (0)
 [0612/150703.275:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'compute-pressure'.", source:  (0)
@@ -151,3 +152,17 @@
 [0612/150903.771:ERROR:leveldb_factory.cc(88)] Failed to open LevelDB database from D:\project\wp -BulkMessage\wp\backend\.wwebjs_auth\session-default\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb,IO error: D:\project\wp -BulkMessage\wp\backend\.wwebjs_auth\session-default\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/LOCK: File currently in use. (ChromeMethodBFE: 15::LockFile::2)
 [0612/150905.885:ERROR:leveldb_factory.cc(88)] Failed to open LevelDB database from D:\project\wp -BulkMessage\wp\backend\.wwebjs_auth\session-default\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb,IO error: D:\project\wp -BulkMessage\wp\backend\.wwebjs_auth\session-default\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/LOCK: File currently in use. (ChromeMethodBFE: 15::LockFile::2)
 [0612/150907.945:ERROR:leveldb_factory.cc(88)] Failed to open LevelDB database from D:\project\wp -BulkMessage\wp\backend\.wwebjs_auth\session-default\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb,IO error: D:\project\wp -BulkMessage\wp\backend\.wwebjs_auth\session-default\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/LOCK: File currently in use. (ChromeMethodBFE: 15::LockFile::2)
+=======
+[0617/110720.434:INFO:CONSOLE(163)] "Event handler of 'x-storagemutated-1' event must be added on the initial evaluation of worker script.", source: https://static.whatsapp.net/rsrc.php/v4/yV/r/B1ctacenJz7.js (163)
+[0617/110721.215:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Feature xr-spatial-tracking's parameters are ignored.", source:  (0)
+[0617/110721.215:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'attribution-reporting'.", source:  (0)
+[0617/110721.215:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'compute-pressure'.", source:  (0)
+[0617/110721.217:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.", source:  (0)
+[0617/110721.217:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'private-state-token-issuance'.", source:  (0)
+[0617/110721.217:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'shared-storage'.", source:  (0)
+[0617/110721.217:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'shared-storage-select-url'.", source:  (0)
+[0617/110721.217:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'private-state-token-redemption'.", source:  (0)
+[0617/110721.217:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'unload'.", source:  (0)
+[0617/110721.217:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'window-management'.", source:  (0)
+[0617/110721.217:INFO:CONSOLE(0)] "Document-Policy HTTP header: Unrecognized document policy feature name include-js-call-stacks-in-crash-reports.", source: https://web.whatsapp.com/ (0)
+>>>>>>> 1074a2a (secc)

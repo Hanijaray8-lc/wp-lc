@@ -130,4 +130,8 @@ module.exports = {
   logoutClient,
   getAllSessions,
   getDefaultSessionId
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> 1074a2a (secc)

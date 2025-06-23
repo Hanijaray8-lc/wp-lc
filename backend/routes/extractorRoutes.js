@@ -62,4 +62,8 @@ router.post('/', async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
 module.exports = router;
+=======
+module.exports = router;
+>>>>>>> 1074a2a (secc)

@@ -20,6 +20,15 @@ import AutoResponderRule from './components/AutoResponderRules';
 import Message from './components/Message'; 
 import HomePage from './components/HomePage';
 import MessageProgress from './components/MessageProgress';
+<<<<<<< HEAD
+=======
+import SearchForm from './components/SearchForm';
+import SocialMedia from './components/SocialMedia';
+import GoogleMap from './components/GoogleMap';
+import HelpSupportPage from './components/HelpSupportPage';
+import Main from './components/Home/HomePage';
+import About from './components/About';
+>>>>>>> 1074a2a (secc)
 
 function App() {
   return (
@@ -41,9 +50,23 @@ function App() {
           <Route path="/nav" element={<Navbar />} />
           <Route path="/auto" element={<ProtectedRoute permission="auto"><AutoResponderRule/></ProtectedRoute>} />
           <Route path='/extractor' element={<ProtectedRoute permission="extractor"><Extractor /></ProtectedRoute>} />
+<<<<<<< HEAD
           <Route path="/messageform" element={<Message />} />
           <Route path="/messageprogress" element={<MessageProgress />} />
           <Route path="/home" element={<HomePage />} />
+=======
+          <Route path='/link' element={<ProtectedRoute permission="link"><SocialMedia /></ProtectedRoute>} />
+          <Route path='/google' element={<ProtectedRoute permission="google"><GoogleMap/></ProtectedRoute>} />
+          <Route path="/messageform" element={<Message />} />
+          <Route path="/messageprogress" element={<MessageProgress />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/data" element={<SearchForm />} />
+          <Route path="/help" element={<HelpSupportPage />} />
+          <Route path="/main" element={<Main />} />
+          <Route path="/about" element={<About />} />
+      
+
+>>>>>>> 1074a2a (secc)
         </Routes>
       </Router>
       <ToastContainer />

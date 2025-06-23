@@ -5,10 +5,17 @@ const Header = () => {
     <header className="bg-green-700 text-white flex items-center justify-between px-6 py-4">
       <h1 className="text-xl font-semibold">LC WA Bulk Messenger</h1>
       <nav className="flex gap-8 text-lg">
+<<<<<<< HEAD
         <a href="/Homepage" className="hover:underline">Home</a>
         <a href="#" className="hover:underline">About</a>
         <a href="/services" className="hover:underline">Services</a>
         <a href="#" className="hover:underline">Contact</a>
+=======
+        <a href="/main" className="hover:underline">Home</a>
+        <a href="about" className="hover:underline">About</a>
+        <a href="/services" className="hover:underline">Services</a>
+        <a href="help" className="hover:underline">Contact</a>
+>>>>>>> 1074a2a (secc)
       </nav>
       <div className="flex items-center gap-4">
         {/* <select className="bg-white text-black px-2 py-1 rounded">
