@@ -46,7 +46,7 @@ router.post('/login', async (req, res) => {
   }
 
   try {
-    const user = await User.findOne({ username, password }); // In production, use hashed passwords
+    const user = await User.findOne({ username, password }); // In production, hash this
 
     if (!user) {
       return res.status(401).json({ error: 'Invalid username or password' });
@@ -56,24 +56,29 @@ router.post('/login', async (req, res) => {
       return res.status(403).json({ error: 'Your account is disabled. Please contact admin.' });
     }
 
-    // Generate a sessionId for WhatsApp client (use companyName or username for uniqueness)
-    const sessionId = user.companyName || user.username;
-
-    // Initialize WhatsApp client for this sessionId
+    // 🛑 This might be undefined
     const { initializeWhatsAppClient } = require('../whatsapp/client');
-    const io = req.app.get('io'); // Make sure to set io in app.js/server.js
+    const io = req.app.get('io'); // <-- This might be undefined!
+    const sessionId = user.sessionId; // 🔍 get sessionId from DB
+
+    if (!sessionId) {
+      return res.status(400).json({ error: 'Session ID not found for user' });
+    }
+
     initializeWhatsAppClient(io, sessionId);
 
-    res.status(200).json({ 
+    return res.status(200).json({
       message: 'Login successful',
       companyName: user.companyName,
       username: user.username,
-      sessionId // send sessionId to frontend
+      sessionId: user.sessionId,
     });
   } catch (err) {
+    console.error('Login error:', err); // <-- Add this
     res.status(500).json({ error: 'Server error' });
   }
 });
+
 
 router.patch('/users/:id/activate', async (req, res) => {
   try {
@@ -83,6 +88,20 @@ router.patch('/users/:id/activate', async (req, res) => {
     res.status(500).json({ error: 'Failed to activate user' });
   }
 });
+// GET /api/users/:username/session
+router.get('/users/:username/session', async (req, res) => {
+  const { username } = req.params;
+  try {
+    const user = await User.findOne({ username }, 'sessionId');
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    res.json({ sessionId: user.sessionId });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch session ID' });
+  }
+});
+
 // Update user permissions
 router.patch('/users/:id/permissions', async (req, res) => {
   try {
@@ -111,6 +130,20 @@ router.patch('/users/:id/deactivate', async (req, res) => {
     res.json({ message: 'User deactivated' });
   } catch (err) {
     res.status(500).json({ error: 'Failed to deactivate user' });
+  }
+});
+
+// Update sessionId for a user (call after WhatsAppAuth)
+router.post('/users/update-session', async (req, res) => {
+  const { username, sessionId } = req.body;
+  if (!username || !sessionId) {
+    return res.status(400).json({ error: 'username and sessionId required' });
+  }
+  try {
+    await User.findOneAndUpdate({ username }, { sessionId });
+    res.json({ message: 'Session ID updated' });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to update sessionId' });
   }
 });
 

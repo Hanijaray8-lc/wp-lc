@@ -5,6 +5,7 @@ const userSchema = new mongoose.Schema({
   email: { type: String },
   password: { type: String },
   companyName: { type: String, required: true, unique: true },
+  sessionId: { type: String }, // ✅ Add this
   isActive: { type: Boolean, default: true },
   accessPermissions: {
     homepage: { type: Boolean, default: false },
@@ -14,8 +15,8 @@ const userSchema = new mongoose.Schema({
     xl: { type: Boolean, default: false },
     dashboard: { type: Boolean, default: false },
     group: { type: Boolean, default: false },
-     contact: { type: Boolean, default: false },
-     auto: { type: Boolean, default: false },
+    contact: { type: Boolean, default: false },
+    auto: { type: Boolean, default: false },
     extractor: { type: Boolean, default: false },
     link: { type: Boolean, default: false },
     google: { type: Boolean, default: false }

@@ -10,11 +10,23 @@ const SendBulkForm = () => {
   const [isSending, setIsSending] = useState(false);
   const [report, setReport] = useState(null);
 
-  useEffect(() => {
-    // Auto-fetch sessionId from localStorage
-    const storedSessionId = localStorage.getItem('sessionId');
-    if (storedSessionId) setSessionId(storedSessionId);
-  }, []);
+useEffect(() => {
+  const username = localStorage.getItem('username');
+  if (username) {
+    axios.get(`https://wp-lc.onrender.com/api/users/${username}/session`)
+      .then((res) => {
+        if (res.data.sessionId) {
+          setSessionId(res.data.sessionId);
+          console.log('✅ Session ID fetched from backend:', res.data.sessionId);
+        } else {
+          alert('No session ID found. Please scan WhatsApp QR to create a session.');
+        }
+      })
+      .catch((err) => {
+        console.error('❌ Failed to fetch session ID:', err);
+      });
+  }
+}, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -58,17 +70,16 @@ const SendBulkForm = () => {
           <h2 className="text-3xl font-bold text-center text-green-700 mb-6">Send Bulk Messages</h2>
 
           <form onSubmit={handleSubmit} className="space-y-5">
-            {/* <div>
-              <label className="block text-sm font-medium text-green-800">Session ID</label>
-              <input
-                type="text"
-                value={sessionId}
-                onChange={(e) => setSessionId(e.target.value)}
-                placeholder="Enter session ID"
-                required
-                className="w-full border border-green-300 rounded-md p-2 mt-1 text-sm"
-              />
-            </div> */}
+           <div>
+  <label className="block text-sm font-medium text-green-800">Session ID</label>
+  <input
+    type="text"
+    value={sessionId}
+    disabled
+    className="w-full border border-gray-300 bg-gray-100 rounded-md p-2 mt-1 text-sm text-gray-500"
+  />
+</div>
+
 
             <div>
               <label className="block text-sm font-medium text-green-800">Phone Numbers</label>

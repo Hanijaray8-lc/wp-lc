@@ -19,7 +19,7 @@ const HomePage = () => {
     // Wait for WhatsAppAuth countdown to finish before showing form
     setTimeout(() => {
       setAuthComplete(true); // ✅ after 10s countdown (WhatsAppAuth), show form
-    }, 10000);
+    }, 1000);
   };
 
   return (

@@ -42,11 +42,22 @@ const WhatsAppAuth = ({ onAuthenticated }) => {
       setIsLoading(false);
     });
 
-    socket.on('authenticated', () => {
+    socket.on('authenticated', async () => {
       localStorage.setItem('whatsapp-authenticated', 'true');
       setIsAuthenticated(true);
       setIsLoading(false);
       onAuthenticated(true);
+
+      // Send sessionId to backend for storing in User collection
+      const username = localStorage.getItem('username');
+      const sessionId = sessionIdRef.current;
+      if (username && sessionId) {
+        await fetch('https://wp-lc.onrender.com/api/users/update-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, sessionId })
+        });
+      }
     });
 
     socket.on('ready', () => {
