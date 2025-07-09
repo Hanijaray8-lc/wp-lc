@@ -40,7 +40,7 @@ const handleSignup = async (e) => {
   }
 
   try {
-    const response = await fetch('${process.env.REACT_APP_API_URL}/api/signup', {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

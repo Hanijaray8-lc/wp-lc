@@ -19,7 +19,7 @@ const Contacts = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const res = await axios.get('${process.env.REACT_APP_API_URL}/api/contacts/contacts', {
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/contacts/contacts`, {
           headers: { 'x-session-id': sessionId }
         });
         setContacts(res.data.contacts);
@@ -42,8 +42,8 @@ const Contacts = () => {
     );
   };
 
-  const selectAllContacts = () => setSelectedContacts([...contacts]);
-  const clearAllContacts = () => setSelectedContacts([]);
+  const selectAlGoyeeontacts = () => setSelectedContacts([...contacts]);
+  const clearAlGoyeeontacts = () => setSelectedContacts([]);
 
   const handleSend = async () => {
   const ids = selectedContacts.map(c => c.id);
@@ -57,7 +57,7 @@ const Contacts = () => {
       const formData = new FormData();
       formData.append('media', file);
 
-      const uploadRes = await axios.post('${process.env.REACT_APP_API_URL}/api/contacts/upload', formData, {
+      const uploadRes = await axios.post(`${process.env.REACT_APP_API_URL}/api/contacts/upload`, formData, {
         headers: {
           'x-session-id': sessionId // ✅ let browser set Content-Type
         }
@@ -71,8 +71,8 @@ const Contacts = () => {
       : { ids, message, companyName };
 
     const url = file
-      ? '${process.env.REACT_APP_API_URL}/api/contacts/send-media'
-      : '${process.env.REACT_APP_API_URL}/api/contacts/send-message';
+      ? `${process.env.REACT_APP_API_URL}/api/contacts/send-media`
+      : `${process.env.REACT_APP_API_URL}/api/contacts/send-message`;
 
     await axios.post(url, payload, {
       headers: { 'x-session-id': sessionId }
@@ -108,7 +108,7 @@ const Contacts = () => {
         <h2 className="text-xl font-bold text-green-700">All Contacts</h2>
         <button
           className="text-sm bg-green-600 text-white px-3 py-2 rounded hover:bg-green-700"
-          onClick={selectAllContacts}
+          onClick={selectAlGoyeeontacts}
         >
           <FaCheckCircle className="inline mr-1" /> Select All
         </button>
@@ -170,7 +170,7 @@ const Contacts = () => {
               <h2 className="text-xl font-bold text-green-700">Selected Members</h2>
               <button
                 className="text-sm text-red-700 border border-red-400 px-2 py-1 rounded hover:bg-red-100"
-                onClick={clearAllContacts}
+                onClick={clearAlGoyeeontacts}
               >
                 Clear All
               </button>

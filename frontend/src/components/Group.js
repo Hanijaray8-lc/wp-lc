@@ -94,7 +94,7 @@ function App() {
     );
 
     try {
-      await axios.post('${process.env.REACT_APP_API_URL}/api/groups/send-to-members', formData, {
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/groups/send-to-members`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       alert('Message sent!');

@@ -48,7 +48,7 @@ const WhatsAppAuth = ({ onAuthenticated }) => {
     }
 
     // Connect with the retrieved sessionId
-    const socket = io('${process.env.REACT_APP_API_URL}', {
+    const socket = io(`${process.env.REACT_APP_API_URL}`, {
       query: { sessionId: sessionIdRef.current }
     });
     socketRef.current = socket;
@@ -134,7 +134,7 @@ const WhatsAppAuth = ({ onAuthenticated }) => {
 
     try {
       // Call backend API to destroy the WhatsApp client session
-      await fetch('${process.env.REACT_APP_API_URL}/api/logout', {
+      await fetch(`${process.env.REACT_APP_API_URL}/api/logout`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ sessionId }) // Send the specific sessionId to logout

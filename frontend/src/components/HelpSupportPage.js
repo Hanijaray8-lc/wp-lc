@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Header from './Header';
 import Navbar from './Navbar'; // Import the Navbar component
+import { Link } from 'react-router-dom';
 
 export default function HelpSupportPage() {
   const [formData, setFormData] = useState({
@@ -181,6 +182,16 @@ export default function HelpSupportPage() {
           </div>
         </div>
       </div>
+      
+<footer className="bg-green-700 text-white text-center py-4 mt-10">
+        © 2025 Goyee Bulk Messenger   <Link
+          to="/alog"
+          title="A"
+          className="text-2xl hover:underline"
+        >
+          🛡️
+        </Link>. All rights reserved.
+      </footer>
     </div>
   );
 }

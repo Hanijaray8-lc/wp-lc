@@ -92,7 +92,7 @@ const Dashboard = () => {
       <Home />
     <div className="min-h-screen bg-gray-100">
       {/* <header className="bg-green-700 text-white flex items-center justify-between px-6 py-4">
-        <h1 className="text-xl font-semibold">LC WA Bulk Messenger</h1>
+        <h1 className="text-xl font-semibold">Goyee WA Bulk Messenger</h1>
         <nav className="flex gap-6">
           <a href="/Homepage" className="hover:underline">Home</a>
           <a href="#" className="hover:underline">About</a>
@@ -132,7 +132,7 @@ const Dashboard = () => {
       </main>
 
       <footer className="bg-green-700 text-white text-center py-4 mt-10">
-        © 2025 LC WA Bulk Messenger. All rights reserved.
+        © 2025 Goyee WA Bulk Messenger. All rights reserved.
       </footer>
     </div>
     </div>

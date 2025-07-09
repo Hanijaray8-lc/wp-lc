@@ -170,8 +170,8 @@ const MessageForm = () => {
   if (companyName) formData.append('companyName', companyName);
 
   const url = isScheduled
-    ? '${process.env.REACT_APP_API_URL}/api/whatsapp/schedule'
-    : '${process.env.REACT_APP_API_URL}/api/whatsapp/send-bulk';
+    ? `${process.env.REACT_APP_API_URL}/api/whatsapp/schedule`
+    : `${process.env.REACT_APP_API_URL}/api/whatsapp/send-bulk`;
 
   try {
     setIsSending(true);

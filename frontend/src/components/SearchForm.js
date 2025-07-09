@@ -13,7 +13,7 @@ function App() {
     setError('');
     
     try {
-      const response = await axios.post('${process.env.REACT_APP_API_URL}/api/extractor/extract', {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/extractor/extract`, {
         content
       });
       

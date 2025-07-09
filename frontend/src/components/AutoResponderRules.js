@@ -15,7 +15,7 @@ function App() {
 
   const fetchRules = async () => {
     try {
-      const res = await axios.get('${process.env.REACT_APP_API_URL}/api/autoresponder/rules', {
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/autoresponder/rules`, {
         params: { sessionId }
       });
       setRules(res.data.rules);
@@ -26,7 +26,7 @@ function App() {
 
   const fetchActiveSession = async () => {
     try {
-      const res = await axios.get('${process.env.REACT_APP_API_URL}/api/whatsapp/session', {
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/whatsapp/session`, {
         params: { companyName }
       });
       setActiveSession(res.data.session);
@@ -52,7 +52,7 @@ function App() {
           sessionId
         });
       } else {
-        await axios.post('${process.env.REACT_APP_API_URL}/api/autoresponder/rule', {
+        await axios.post(`${process.env.REACT_APP_API_URL}/api/autoresponder/rule`, {
           keyword,
           response,
           sessionId,
@@ -92,7 +92,7 @@ function App() {
 
   const startWhatsAppSession = async () => {
     try {
-      await axios.post('${process.env.REACT_APP_API_URL}/api/whatsapp/init', {
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/whatsapp/init`, {
         companyName
       });
       fetchActiveSession();
@@ -103,7 +103,7 @@ function App() {
 
   const logoutWhatsApp = async () => {
     try {
-      await axios.post('${process.env.REACT_APP_API_URL}/api/whatsapp/logout', {
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/whatsapp/logout`, {
         companyName
       });
       setActiveSession(null);

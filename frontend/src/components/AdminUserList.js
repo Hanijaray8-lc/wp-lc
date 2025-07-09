@@ -24,7 +24,7 @@ const AdminUserList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('${process.env.REACT_APP_API_URL}/api/users')
+    fetch(`${process.env.REACT_APP_API_URL}/api/users`)
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data)) {

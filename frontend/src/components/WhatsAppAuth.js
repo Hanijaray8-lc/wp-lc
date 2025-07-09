@@ -30,7 +30,7 @@ const WhatsAppAuth = ({ onAuthenticated }) => {
   }, [onAuthenticated]);
 
   useEffect(() => {
-    socketRef.current = io('${process.env.REACT_APP_API_URL}', {
+    socketRef.current = io(`${process.env.REACT_APP_API_URL}`, {
       query: { sessionId: sessionIdRef.current }
     });
 
@@ -73,7 +73,7 @@ const WhatsAppAuth = ({ onAuthenticated }) => {
     const sessionId = sessionIdRef.current;
 
     try {
-      await fetch('${process.env.REACT_APP_API_URL}/api/logout', {
+      await fetch(`${process.env.REACT_APP_API_URL}/api/logout`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ sessionId })

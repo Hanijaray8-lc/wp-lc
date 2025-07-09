@@ -3,6 +3,7 @@ import WhatsAppAuth from './WhatsAppAuth';
 import BulkMessageForm from './BulkMessageForm';
 import { ToastContainer } from 'react-toastify';
 import Navbar from './Navbar';
+import { Link } from 'react-router-dom';
 
 function HomePage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -47,8 +48,20 @@ function HomePage() {
         draggable
         pauseOnFocusLoss
       />
+    
+
+<footer className="bg-green-700 text-white text-center py-4 mt-10">
+        © 2025 Goyee Bulk Messenger   <Link
+          to="/alog"
+          title="A"
+          className="text-2xl hover:underline"
+        >
+          🛡️
+        </Link>. All rights reserved.
+      </footer>
     </div>
   );
 }
 
 export default HomePage;
+

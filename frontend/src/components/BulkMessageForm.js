@@ -96,8 +96,8 @@ const BulkMessageForm = () => {
     if (companyName) formData.append('companyName', companyName);
 
     const url = isScheduled
-      ? '${process.env.REACT_APP_API_URL}/api/whatsapp/schedule'
-      : '${process.env.REACT_APP_API_URL}/api/whatsapp/send-bulk';
+      ? `${process.env.REACT_APP_API_URL}/api/whatsapp/schedule`
+      : `${process.env.REACT_APP_API_URL}/api/whatsapp/send-bulk`;
 
     try {
       const response = await axios.post(url, formData, {
@@ -112,7 +112,7 @@ const BulkMessageForm = () => {
         alert('Message scheduled successfully! Fetching report later...');
         setTimeout(async () => {
           try {
-            const reportRes = await axios.get('${process.env.REACT_APP_API_URL}/api/whatsapp/latest-campaign', {
+            const reportRes = await axios.get(`${process.env.REACT_APP_API_URL}/api/whatsapp/latest-campaign`, {
               params: { companyName },
             });
             setReport(reportRes.data.report);
@@ -278,10 +278,10 @@ const BulkMessageForm = () => {
           <h3 className="font-bold mb-2">Send Report</h3>
           <p>Total: {report.total}</p>
           <p>Success: {report.success}</p>
-          <p>Failed: {report.failed}</p>
+          <p>Texted: {report.failed}</p>
           {report.failedNumbers?.length > 0 && (
             <div className="mt-2">
-              <p className="font-medium">Failed Numbers:</p>
+              <p className="font-medium">Texted Numbers:</p>
               <ul className="list-disc pl-5">
                 {report.failedNumbers.map((num, idx) => (
                   <li key={idx}>{num}</li>

@@ -96,7 +96,7 @@ const MapScrapeNoAPI = () => {
 
   try {
     const response = await axios.post(
-      '${process.env.REACT_APP_API_URL}/api/contacts/google-message',
+      `${process.env.REACT_APP_API_URL}/api/contacts/google-message`,
       {
         ids: selectedPhones.map(p => p.replace(/\D/g, '')),
         message: messageText,

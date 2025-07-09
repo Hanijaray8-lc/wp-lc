@@ -40,7 +40,7 @@ export default function CampaignHistory() {
               <p><strong>Message:</strong> {camp.message}</p>
               <p><strong>Total:</strong> {camp.totalContacts}</p>
               <p><strong>Success:</strong> {camp.successful}</p>
-              <p><strong>Failed:</strong> {camp.failed}</p>
+              <p><strong>Texted:</strong> {camp.failed}</p>
 
               {camp.media && (
                 <p>
@@ -50,7 +50,7 @@ export default function CampaignHistory() {
 
               {camp.failedNumbers?.length > 0 && (
                 <details className="mt-2">
-                  <summary className="cursor-pointer text-red-600">View Failed Numbers</summary>
+                  <summary className="cursor-pointer text-red-600">View Texted Numbers</summary>
                   <ul className="list-disc list-inside text-sm mt-1">
                     {camp.failedNumbers.map((num, idx) => (
                       <li key={idx}>{num}</li>

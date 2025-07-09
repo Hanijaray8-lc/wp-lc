@@ -52,7 +52,7 @@ export default function AboutUs() {
             <strong>Life Changers Ind</strong> is a next-generation technology company that empowers businesses to transform communication using WhatsApp. Our smart, scalable tools enable faster, more meaningful customer engagement.
           </p>
           <p>
-            Our flagship product, <strong>LC WA Bulk Messenger</strong>, helps you automate messaging, extract contact data, and manage campaigns effortlessly—all while staying compliant and user-friendly.
+            Our flagship product, <strong>Goyee WA Bulk Messenger</strong>, helps you automate messaging, extract contact data, and manage campaigns effortlessly—all while staying compliant and user-friendly.
           </p>
           <p>
             Whether you're a startup or an enterprise, our tools simplify outreach and boost growth through seamless communication.

@@ -38,7 +38,7 @@ const SendBulkForm = () => {
 
     try {
       setIsSending(true);
-      const response = await axios.post('${process.env.REACT_APP_API_URL}/api/whatsapp/send-bulk', formData, {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/whatsapp/send-bulk`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setReport(response.data.report);

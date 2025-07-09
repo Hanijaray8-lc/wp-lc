@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -14,7 +15,7 @@ const LoginForm = () => {
   e.preventDefault();
 
   try {
-    const response = await fetch('${process.env.REACT_APP_API_URL}/api/login', {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -92,7 +93,29 @@ const LoginForm = () => {
         >
           Login
         </button>
+       <br />
+        <br />
+        <br />
+          <button
+          onClick={() => navigate('/help')}
+          className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded shadow"
+        >
+          Contact Admin for Register
+        </button>
       </form>
+      
+      {/* Footer for LifeChangers + Admin Access */}
+      <div className="absolute bottom-4 flex items-center gap-2 text-white text-sm hover:scale-105 transition">
+        <span>Life Changers Ind</span>
+      <Link
+  to="/alog"
+  title="A"
+  className="text-2xl hover:underline"
+>
+  🛡️
+</Link>
+
+        </div>
     </div>
   );
 };
