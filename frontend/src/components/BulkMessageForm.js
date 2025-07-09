@@ -15,24 +15,11 @@ const BulkMessageForm = () => {
   const [scheduleTime, setScheduleTime] = useState('');
   const [isScheduled, setIsScheduled] = useState(false);
 
-
-  
   useEffect(() => {
-  const username = localStorage.getItem('username');
-  if (username) {
-    axios.get(`https://wp-lc.onrender.com/api/users/${username}/session`)
-      .then(res => {
-        if (res.data.sessionId) {
-          setSessionId(res.data.sessionId);
-          localStorage.setItem('sessionId', res.data.sessionId); // optional
-        }
-      })
-      .catch(err => {
-        console.error('Failed to fetch session ID:', err);
-      });
-  }
-}, []);
-
+    // Auto-fetch sessionId from localStorage
+    const storedSessionId = localStorage.getItem('sessionId');
+    if (storedSessionId) setSessionId(storedSessionId);
+  }, []);
 
   const handleFileChange = (e) => {
     const uploadedFile = e.target.files?.[0];
@@ -109,8 +96,8 @@ const BulkMessageForm = () => {
     if (companyName) formData.append('companyName', companyName);
 
     const url = isScheduled
-      ? 'https://wp-lc.onrender.com/api/whatsapp/schedule'
-      : 'https://wp-lc.onrender.com/api/whatsapp/send-bulk';
+      ? '${process.env.REACT_APP_API_URL}/api/whatsapp/schedule'
+      : '${process.env.REACT_APP_API_URL}/api/whatsapp/send-bulk';
 
     try {
       const response = await axios.post(url, formData, {
@@ -125,7 +112,7 @@ const BulkMessageForm = () => {
         alert('Message scheduled successfully! Fetching report later...');
         setTimeout(async () => {
           try {
-            const reportRes = await axios.get('https://wp-lc.onrender.com/api/whatsapp/latest-campaign', {
+            const reportRes = await axios.get('${process.env.REACT_APP_API_URL}/api/whatsapp/latest-campaign', {
               params: { companyName },
             });
             setReport(reportRes.data.report);
@@ -149,17 +136,16 @@ const BulkMessageForm = () => {
     <div className="max-w-7xl mx-auto p-6 bg-white rounded-lg shadow-md">
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Session ID */}
-        <div>
+        {/* <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Session ID</label>
           <input
             type="text"
             value={sessionId}
             onChange={(e) => setSessionId(e.target.value)}
-            disabled // <-- make it read-only
             className="w-full border px-3 py-2 rounded"
             required
           />
-        </div>
+        </div> */}
 
         {/* File Upload */}
         <div className="flex flex-col lg:flex-row gap-6">

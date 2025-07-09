@@ -26,7 +26,7 @@ useEffect(() => {
   const fetchHistory = async () => {
     try {
       const companyName = localStorage.getItem('companyName'); // ✅
-      const response = await axios.get(`https://wp-lc.onrender.com/api/history?companyName=${companyName}`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/history?companyName=${companyName}`);
       setHistory(response.data);
     } catch (err) {
       console.error('Failed to load history', err);
@@ -50,7 +50,7 @@ useEffect(() => {
 
     try {
       const companyName = localStorage.getItem('companyName'); // <-- Get companyName
-      const response = await fetch('https://wp-lc.onrender.com/api/socialextract', {
+      const response = await fetch('${process.env.REACT_APP_API_URL}/api/socialextract', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url, companyName }) // <-- Send companyName
@@ -59,7 +59,7 @@ useEffect(() => {
       setResults(data.socialLinks);
       
       // Fetch updated history
-      const historyResponse = await axios.get('https://wp-lc.onrender.com/api/history');
+      const historyResponse = await axios.get('${process.env.REACT_APP_API_URL}/api/history');
       setHistory(historyResponse.data);
       
       // Find and select the newly created history item

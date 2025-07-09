@@ -28,7 +28,7 @@ const MapScrapeNoAPI = () => {
     setSelectedPhones([]);
 
     try {
-      const response = await fetch(`https://wp-lc.onrender.com/api/scrape-maps?query=${encodeURIComponent(query)}&companyName=${encodeURIComponent(companyName)}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/scrape-maps?query=${encodeURIComponent(query)}&companyName=${encodeURIComponent(companyName)}`);
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -96,7 +96,7 @@ const MapScrapeNoAPI = () => {
 
   try {
     const response = await axios.post(
-      'https://wp-lc.onrender.com/api/contacts/google-message',
+      '${process.env.REACT_APP_API_URL}/api/contacts/google-message',
       {
         ids: selectedPhones.map(p => p.replace(/\D/g, '')),
         message: messageText,

@@ -52,7 +52,7 @@ function ContactExtractor() {
     // ✅ Logged-in user's company name (stored during login)
     const companyName = localStorage.getItem('companyName');
 
-    const response = await axios.post('https://wp-lc.onrender.com/api/extract', {
+    const response = await axios.post('${process.env.REACT_APP_API_URL}/api/extract', {
       url,
       companyName, // ✅ Send to backend
     });
@@ -91,7 +91,7 @@ function ContactExtractor() {
   const sendWhatsAppMessage = async () => {
   try {
     const response = await axios.post(
-      'https://wp-lc.onrender.com/api/contacts/message',
+      '${process.env.REACT_APP_API_URL}/api/contacts/message',
       {
         ids: selectedPhones.map(p => p.replace('+', '')),
         message,

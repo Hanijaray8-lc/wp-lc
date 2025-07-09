@@ -5,7 +5,7 @@ const Header = () => {
     <header className="bg-green-700 text-white flex items-center justify-between px-6 py-4">
       <h1 className="text-xl font-semibold">LC WA Bulk Messenger</h1>
       <nav className="flex gap-8 text-lg">
-        <a href="/main" className="hover:underline">Home</a>
+        <a href="/Homepage" className="hover:underline">Home</a>
         <a href="about" className="hover:underline">About</a>
         <a href="/services" className="hover:underline">Services</a>
         <a href="help" className="hover:underline">Contact</a>

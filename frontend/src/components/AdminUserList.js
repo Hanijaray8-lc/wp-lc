@@ -24,7 +24,7 @@ const AdminUserList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('https://wp-lc.onrender.com/api/users')
+    fetch('${process.env.REACT_APP_API_URL}/api/users')
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data)) {
@@ -39,7 +39,7 @@ const AdminUserList = () => {
   const handleAccept = async (userId) => {
     setLoadingUserId(userId);
     try {
-      await fetch(`https://wp-lc.onrender.com/api/users/${userId}/activate`, { method: 'PATCH' });
+      await fetch(`${process.env.REACT_APP_API_URL}/api/users/${userId}/activate`, { method: 'PATCH' });
       setUsers(users.map(u => u._id === userId ? { ...u, isActive: true } : u));
       alert('User accepted successfully!');
     } catch (err) {
@@ -52,7 +52,7 @@ const AdminUserList = () => {
   const handleReject = async (userId) => {
     setLoadingUserId(userId);
     try {
-      await fetch(`https://wp-lc.onrender.com/api/users/${userId}/deactivate`, { method: 'PATCH' });
+      await fetch(`${process.env.REACT_APP_API_URL}/api/users/${userId}/deactivate`, { method: 'PATCH' });
       setUsers(users.map(u => u._id === userId ? { ...u, isActive: false } : u));
       alert('User rejected successfully!');
     } catch (err) {
@@ -92,7 +92,7 @@ const AdminUserList = () => {
 
   const savePermissions = async () => {
     try {
-      const response = await fetch(`https://wp-lc.onrender.com/api/users/${selectedUser._id}/permissions`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/users/${selectedUser._id}/permissions`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

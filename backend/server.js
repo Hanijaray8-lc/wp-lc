@@ -8,7 +8,7 @@ const cors = require('cors');
 
 const { initializeWhatsAppClient, getClient, getAllSessions } = require('./whatsapp/client');
 
-const allowedOrigin = process.env.FRONTEND_URL || 'https://wp-lc.netlify.app';
+const allowedOrigin = process.env.FRONTEND_URL || 'http://localhost:3000';
 
 // CORS for Express
 
@@ -16,7 +16,7 @@ const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: process.env.FRONTEND_URL || 'https://wp-lc.netlify.app',
+    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
     methods: ['GET', 'POST']
   }
 });

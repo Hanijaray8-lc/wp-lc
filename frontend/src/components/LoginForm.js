@@ -14,7 +14,7 @@ const LoginForm = () => {
   e.preventDefault();
 
   try {
-    const response = await fetch('https://wp-lc.onrender.com/api/login', {
+    const response = await fetch('${process.env.REACT_APP_API_URL}/api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ const LoginForm = () => {
       localStorage.setItem('username', data.username);
       localStorage.setItem('sessionId', data.sessionId); // <-- Add this line
       alert('Login successful! Redirecting to homepage.');
-      navigate('/main');
+      navigate('/Homepage');
     } else {
       setError(data.error || 'Login failed');
     }

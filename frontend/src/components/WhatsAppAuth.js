@@ -30,7 +30,7 @@ const WhatsAppAuth = ({ onAuthenticated }) => {
   }, [onAuthenticated]);
 
   useEffect(() => {
-    socketRef.current = io('https://wp-lc.onrender.com', {
+    socketRef.current = io('${process.env.REACT_APP_API_URL}', {
       query: { sessionId: sessionIdRef.current }
     });
 
@@ -42,22 +42,11 @@ const WhatsAppAuth = ({ onAuthenticated }) => {
       setIsLoading(false);
     });
 
-    socket.on('authenticated', async () => {
+    socket.on('authenticated', () => {
       localStorage.setItem('whatsapp-authenticated', 'true');
       setIsAuthenticated(true);
       setIsLoading(false);
       onAuthenticated(true);
-
-      // Send sessionId to backend for storing in User collection
-      const username = localStorage.getItem('username');
-      const sessionId = sessionIdRef.current;
-      if (username && sessionId) {
-        await fetch('https://wp-lc.onrender.com/api/users/update-session', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ username, sessionId })
-        });
-      }
     });
 
     socket.on('ready', () => {
@@ -84,7 +73,7 @@ const WhatsAppAuth = ({ onAuthenticated }) => {
     const sessionId = sessionIdRef.current;
 
     try {
-      await fetch('https://wp-lc.onrender.com/api/logout', {
+      await fetch('${process.env.REACT_APP_API_URL}/api/logout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ sessionId })

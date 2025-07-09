@@ -19,7 +19,7 @@ const Contacts = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const res = await axios.get('https://wp-lc.onrender.com/api/contacts/contacts', {
+        const res = await axios.get('${process.env.REACT_APP_API_URL}/api/contacts/contacts', {
           headers: { 'x-session-id': sessionId }
         });
         setContacts(res.data.contacts);
@@ -57,7 +57,7 @@ const Contacts = () => {
       const formData = new FormData();
       formData.append('media', file);
 
-      const uploadRes = await axios.post('https://wp-lc.onrender.com/api/contacts/upload', formData, {
+      const uploadRes = await axios.post('${process.env.REACT_APP_API_URL}/api/contacts/upload', formData, {
         headers: {
           'x-session-id': sessionId // ✅ let browser set Content-Type
         }
@@ -71,8 +71,8 @@ const Contacts = () => {
       : { ids, message, companyName };
 
     const url = file
-      ? 'https://wp-lc.onrender.com/api/contacts/send-media'
-      : 'https://wp-lc.onrender.com/api/contacts/send-message';
+      ? '${process.env.REACT_APP_API_URL}/api/contacts/send-media'
+      : '${process.env.REACT_APP_API_URL}/api/contacts/send-message';
 
     await axios.post(url, payload, {
       headers: { 'x-session-id': sessionId }

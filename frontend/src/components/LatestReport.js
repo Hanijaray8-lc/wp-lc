@@ -9,7 +9,7 @@ export default function CampaignReport() {
 
   useEffect(() => {
     const companyName = localStorage.getItem('companyName');
-    fetch(`https://wp-lc.onrender.com/api/whatsapp/latest-campaign?companyName=${encodeURIComponent(companyName)}`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/whatsapp/latest-campaign?companyName=${encodeURIComponent(companyName)}`)
       .then(res => res.json())
       .then(data => {
         setReport(data.report);

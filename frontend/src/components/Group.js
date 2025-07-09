@@ -15,7 +15,7 @@ function App() {
       const sessionId = localStorage.getItem('sessionId');
       if (!sessionId) throw new Error('Session ID missing');
 
-      const res = await axios.get(`https://wp-lc.onrender.com/api/groups/my-groups`, {
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/groups/my-groups`, {
         headers: {
           'x-session-id': sessionId,
         },
@@ -94,7 +94,7 @@ function App() {
     );
 
     try {
-      await axios.post('https://wp-lc.onrender.com/api/groups/send-to-members', formData, {
+      await axios.post('${process.env.REACT_APP_API_URL}/api/groups/send-to-members', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       alert('Message sent!');

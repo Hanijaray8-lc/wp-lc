@@ -15,7 +15,7 @@ function App() {
 
   const fetchRules = async () => {
     try {
-      const res = await axios.get('https://wp-lc.onrender.com/api/autoresponder/rules', {
+      const res = await axios.get('${process.env.REACT_APP_API_URL}/api/autoresponder/rules', {
         params: { sessionId }
       });
       setRules(res.data.rules);
@@ -26,7 +26,7 @@ function App() {
 
   const fetchActiveSession = async () => {
     try {
-      const res = await axios.get('https://wp-lc.onrender.com/api/whatsapp/session', {
+      const res = await axios.get('${process.env.REACT_APP_API_URL}/api/whatsapp/session', {
         params: { companyName }
       });
       setActiveSession(res.data.session);
@@ -46,13 +46,13 @@ function App() {
 
     try {
       if (editingRule) {
-        await axios.put(`https://wp-lc.onrender.com/api/autoresponder/rule/${editingRule._id}`, {
+        await axios.put(`${process.env.REACT_APP_API_URL}/api/autoresponder/rule/${editingRule._id}`, {
           keyword,
           response,
           sessionId
         });
       } else {
-        await axios.post('https://wp-lc.onrender.com/api/autoresponder/rule', {
+        await axios.post('${process.env.REACT_APP_API_URL}/api/autoresponder/rule', {
           keyword,
           response,
           sessionId,
@@ -80,7 +80,7 @@ function App() {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this rule?')) {
       try {
-        await axios.delete(`https://wp-lc.onrender.com/api/autoresponder/rule/${id}`, {
+        await axios.delete(`${process.env.REACT_APP_API_URL}/api/autoresponder/rule/${id}`, {
           params: { sessionId }
         });
         fetchRules();
@@ -92,7 +92,7 @@ function App() {
 
   const startWhatsAppSession = async () => {
     try {
-      await axios.post('https://wp-lc.onrender.com/api/whatsapp/init', {
+      await axios.post('${process.env.REACT_APP_API_URL}/api/whatsapp/init', {
         companyName
       });
       fetchActiveSession();
@@ -103,7 +103,7 @@ function App() {
 
   const logoutWhatsApp = async () => {
     try {
-      await axios.post('https://wp-lc.onrender.com/api/whatsapp/logout', {
+      await axios.post('${process.env.REACT_APP_API_URL}/api/whatsapp/logout', {
         companyName
       });
       setActiveSession(null);

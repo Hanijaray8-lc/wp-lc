@@ -81,7 +81,7 @@ function ProtectedRoute({ children, permission }) {
           return;
         }
 
-        const response = await fetch(`https://wp-lc.onrender.com/api/users/${username}/permissions`);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/users/${username}/permissions`);
         const data = await response.json();
         
         if (response.ok && data.accessPermissions && data.accessPermissions[permission]) {

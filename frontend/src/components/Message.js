@@ -106,8 +106,8 @@ const MessageForm = () => {
     if (companyName) formData.append('companyName', companyName);
 
     const url = isScheduled
-      ? 'https://wp-lc.onrender.com/api/whatsapp/schedule'
-      : 'https://wp-lc.onrender.com/api/whatsapp/send-bulk';
+      ? '${process.env.REACT_APP_API_URL}/api/whatsapp/schedule'
+      : '${process.env.REACT_APP_API_URL}/api/whatsapp/send-bulk';
 
     try {
       setIsSending(true);
